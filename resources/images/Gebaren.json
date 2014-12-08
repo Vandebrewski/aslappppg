@@ -1,0 +1,16 @@
+{"Gebaartje": [
+{"Id":1, "plaatje":"car"},
+{"Id":2, "plaatje":"boat"},
+{"Id":3, "plaatje":"subway"},
+{"Id":4, "plaatje":"horse"},
+{"Id":5, "plaatje":"butterfly"},{"Id":6, "plaatje":"dolphin"},
+{"Id":7, "plaatje":"fish"},
+{"Id":8, "plaatje":"cat"},
+{"Id":9, "plaatje":"kangaroo"},
+{"Id":10, "plaatje":"mouse"},
+{"Id":11, "plaatje":"donkey"},
+{"Id":12, "plaatje":"walking"},
+{"Id":13, "plaatje":"teacher"},
+{"Id":14, "plaatje":"black"},
+{"Id":15, "plaatje":"white"},
+{"Id":16, "plaatje":"red"}]}
