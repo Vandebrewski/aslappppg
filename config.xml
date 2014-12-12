@@ -7,7 +7,7 @@
         versionCode = "10"
         version   = "1.0.0">
 
-    <name>ASL-kids</name>
+    <name>ASL kids</name>
 
     <description>
        Learn ASL in a fun way
@@ -44,12 +44,6 @@ permission on your app, which PhoneGap requires.
 <preference name="android-minSdkVersion" value="7" /> <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
 <preference name="android-installLocation" value="auto" /> <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
-
-
- 
-
-    <icon src="resources/icons/icons-57.png" />
-
     
     <icon src="resources/icons/icons-76.png"       gap:platform="ios"	width="76" height="76" />
     <icon src="resources/icons/icons-152.png"      gap:platform="ios"	width="152" height="1" />    
@@ -58,9 +52,11 @@ permission on your app, which PhoneGap requires.
     <icon src="resources/icons/icons-40.png"       gap:platform="ios"	width="40" height="40" />
     <icon src="resources/icons/icons-80.png"       gap:platform="ios"	width="80" height="80" />
 
-<!-- 
-    <gap:splash src="resources/icons/768x1024.png"      gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="splash.png" />
+ 
+    <gap:splash src="resources/icons/splash.png"      gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="resources/icons/splash.png" />
+
+<!--
 -->
 
 
