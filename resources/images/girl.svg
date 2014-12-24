@@ -1,4 +1,3 @@
-
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="768px"
 	 height="976px" viewBox="0 0 768 976" enable-background="new 0 0 768 976" xml:space="preserve">
 	 
@@ -20,15 +19,6 @@
 	-moz-animation: fadein 3s infinite;	
 	}
 
-	#kids {
-	
-	stroke-dasharray: 1000;
-	stroke-dashoffset: 0;
-
-	-webkit-animation: dash 2s linear forwards;
-	-moz-animation: dash 2s linear forwards;
-    
-	}
 	
 	#kids path, #logo {
 
@@ -39,9 +29,6 @@
 	
 	@-moz-keyframes fadein {50% { opacity: 0.02;}}
 	@-webkit-keyframes fadein {50% {opacity: 0.02;}}
-	
-	@-moz-keyframes dash {from {stroke-dashoffset: 1000;} to {stroke-dashoffset: 0;}}
-	@-webkit-keyframes dash {from {stroke-dashoffset: 1000;} to {stroke-dashoffset: 0;}}
 
 	@-moz-keyframes fadered {from {fill-opacity: 0;} to {fill-opacity: 1;}}
 	@-webkit-keyframes fadered {from {fill-opacity: 0;} to {fill-opacity: 1;}}
