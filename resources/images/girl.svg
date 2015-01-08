@@ -5,26 +5,6 @@
 <refs>
 	<style>
 	
-	#star path {
-	-webkit-animation: fadein 4s infinite;
-	-moz-animation: fadein 4s infinite;
-	}
-
-	#stargroup1 {
-	-webkit-animation: fadein 6s infinite;
-	-moz-animation: fadein 6s infinite;	
-	}
-
-	#stargroup2 {
-	-webkit-animation: fadein 3s infinite;
-	-moz-animation: fadein 3s infinite;	
-	}
-
-
-	
-	@-moz-keyframes fadein {50% { opacity: 0.02;}}
-	@-webkit-keyframes fadein {50% {opacity: 0.02;}}
-	
 
 	</style>
 </refs>	 
