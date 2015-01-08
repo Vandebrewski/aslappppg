@@ -20,22 +20,7 @@
 	-moz-animation: fadein 3s infinite;	
 	}
 
-	#kids {
-	
-	stroke-dasharray: 1000;
-	stroke-dashoffset: 0;
 
-	-webkit-animation: dash 2s linear forwards;
-	-moz-animation: dash 2s linear forwards;
-    
-	}
-	
-	#kids path, #logo {
-
-	-webkit-animation: fadered 5s;
-	-moz-animation: fadered 5s;
-	
-	}
 	
 	@-moz-keyframes fadein {50% { opacity: 0.02;}}
 	@-webkit-keyframes fadein {50% {opacity: 0.02;}}
