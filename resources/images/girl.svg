@@ -5,7 +5,32 @@
 <refs>
 	<style>
 	
+	#star path {
+	-webkit-animation: fadein 4s 3s;
+	-moz-animation: fadein 4s 3s;
+	}
 
+	#stargroup1 {
+	-webkit-animation: fadein 6s 3s;
+	-moz-animation: fadein 6s 3s;	
+	}
+
+	#stargroup2 {
+	-webkit-animation: fadein 3s 3s;
+	-moz-animation: fadein 3s 3s;	
+	}
+
+
+	
+	@-moz-keyframes fadein {50% { opacity: 0.02;}}
+	@-webkit-keyframes fadein {50% {opacity: 0.02;}}
+	
+	@-moz-keyframes dash {from {stroke-dashoffset: 1000;} to {stroke-dashoffset: 0;}}
+	@-webkit-keyframes dash {from {stroke-dashoffset: 1000;} to {stroke-dashoffset: 0;}}
+
+	@-moz-keyframes fadered {from {fill-opacity: 0;} to {fill-opacity: 1;}}
+	@-webkit-keyframes fadered {from {fill-opacity: 0;} to {fill-opacity: 1;}}
+	
 	</style>
 </refs>	 
 	 
