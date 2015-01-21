@@ -32,5 +32,20 @@
 {"Id":32, "plaatje":"time"},
 {"Id":33, "plaatje":"toothbrush"},
 {"Id":34, "plaatje":"milk"},
-{"Id":35, "plaatje":"spider"}
+{"Id":35, "plaatje":"spider"},
+{"Id":36, "plaatje":"ball"},
+{"Id":37, "plaatje":"bear"},
+{"Id":38, "plaatje":"bicycle"},
+{"Id":39, "plaatje":"bread"},
+{"Id":40, "plaatje":"bus"},
+{"Id":41, "plaatje":"cow"},
+{"Id":42, "plaatje":"food"},
+{"Id":43, "plaatje":"hamburger"},
+{"Id":44, "plaatje":"house"},
+{"Id":45, "plaatje":"paper"},
+{"Id":46, "plaatje":"pen"},
+{"Id":47, "plaatje":"pig"},
+{"Id":48, "plaatje":"school"},
+{"Id":49, "plaatje":"tiger"},
+{"Id":50, "plaatje":"water"}
 ]}
