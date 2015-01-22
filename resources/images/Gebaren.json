@@ -9,7 +9,7 @@
 {"Id":9, "plaatje":"kangaroo"},
 {"Id":10, "plaatje":"mouse"},
 {"Id":11, "plaatje":"donkey"},
-{"Id":12, "plaatje":"walking"},
+{"Id":12, "plaatje":"walk"},
 {"Id":13, "plaatje":"teacher"},
 {"Id":14, "plaatje":"black"},
 {"Id":15, "plaatje":"white"},
@@ -47,5 +47,6 @@
 {"Id":47, "plaatje":"pig"},
 {"Id":48, "plaatje":"school"},
 {"Id":49, "plaatje":"tiger"},
-{"Id":50, "plaatje":"water"}
+{"Id":50, "plaatje":"water"},
+{"Id":51, "plaatje":"elephant"}
 ]}
