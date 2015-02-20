@@ -37,8 +37,10 @@ permission on your app, which PhoneGap requires.
 <preference name="stay-in-webview" value="false" /> <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
 <preference name="ios-statusbarstyle" value="white-opaque" /> <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
 <preference name="detect-data-types" value="false" /> <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
-<preference name="exit-on-suspend" value="false" /> <!-- ios: if set to true, app will terminate when home button is pressed -->
+<preference name="exit-on-suspend" value="true" /> <!-- ios: if set to true, app will terminate when home button is pressed -->
 <preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+
+<preference name="AllowInlineMediaPlayback" value="true" />
 
 <preference name="SplashScreenDelay" value="10000"/> 
 <preference name="splashscreen" value="resources/icons/splash.png" /> 
