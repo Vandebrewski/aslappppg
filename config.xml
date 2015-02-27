@@ -52,6 +52,8 @@ permission on your app, which PhoneGap requires.
 <preference name="StatusBarBackgroundColor" value="#65bcab" />
 <preference name="StatusBarStyle" value="lightcontent" />
 
+<gap:plugin name="hu.dpal.phonegap.plugins.spinnerdialog" version="1.2.0" />
+
 
 
     
