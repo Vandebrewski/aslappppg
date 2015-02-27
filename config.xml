@@ -44,6 +44,7 @@ permission on your app, which PhoneGap requires.
 <gap:plugin name="org.apache.cordova.splashscreen" /> <!-- prevents white flash -->
 <preference name="SplashScreenDelay" value="10000"/> <!-- prevents unloaded app -->
 
+<preference name="splashscreen" value="resources/icons/splash.png" /> 
 
 
 <!-- statusbar plugin en settings -->
@@ -60,6 +61,8 @@ permission on your app, which PhoneGap requires.
     <icon src="resources/icons/icons-29.png"       gap:platform="ios"	width="29" height="29" />
     <icon src="resources/icons/icons-40.png"       gap:platform="ios"	width="40" height="40" />
     <icon src="resources/icons/icons-80.png"       gap:platform="ios"	width="80" height="80" />
+    
+    
     
     <gap:splash src="resources/icons/ipad-portrait.png" gap:platform="ios" width="768" height="1024"/> <!--  iPad  -->
     <gap:splash src="resources/icons/320x480.png" gap:platform="ios" width="320" height="480"/> <!--   -->
