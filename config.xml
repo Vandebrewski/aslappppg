@@ -44,7 +44,7 @@ permission on your app, which PhoneGap requires.
 <gap:plugin name="org.apache.cordova.splashscreen" /> <!-- prevents white flash -->
 <preference name="SplashScreenDelay" value="10000"/> <!-- prevents unloaded app -->
 
-<preference name="splashscreen" value="resources/icons/splash.png" /> 
+
 
 
 <!-- statusbar plugin en settings -->
