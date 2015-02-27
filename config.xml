@@ -65,8 +65,7 @@ permission on your app, which PhoneGap requires.
     <icon src="resources/icons/icons-80.png"       gap:platform="ios"	width="80" height="80" />
 
  
-    <gap:splash src="resources/icons/splash.png"      gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="resources/icons/splash.png" />
+    <gap:splash src="resources/icons/splash.png"      gap:platform="ios"   />
 
 <!--
 -->
