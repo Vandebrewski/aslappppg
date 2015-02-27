@@ -30,6 +30,23 @@ B("apple-mobile-web-app-capable","yes");B("apple-touch-fullscreen","yes");c?(b=n
 -->
     
 </head>
-<body>	
+<body>
+	<script type="text/javascript" charset="utf-8">
+
+        // Wait for Cordova to load
+        
+        document.addEventListener("deviceready", onDeviceReady, false);
+        var phoneGapReady = true;   
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+            console.log("phoneGapReady()")
+            phoneGapReady = true
+            console.log("phoneGapReady()~")
+            navigator.splashscreen.show();
+        }
+
+    </script>	
 </body>
 </html>
