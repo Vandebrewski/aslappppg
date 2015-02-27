@@ -36,16 +36,25 @@ permission on your app, which PhoneGap requires.
 <preference name="webviewbounce" value="true" /> <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
 <preference name="prerendered-icon" value="true" /> <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
 <preference name="stay-in-webview" value="false" /> <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
-<preference name="ios-statusbarstyle" value="blackopaque" /> <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+
+
+
+
 <preference name="detect-data-types" value="false" /> <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
 <preference name="exit-on-suspend" value="true" /> <!-- ios: if set to true, app will terminate when home button is pressed -->
 <preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
 <preference name="AllowInlineMediaPlayback" value="true" />
 <preference name="auto-hide-splash-screen" value="true" /> <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 
-<preference name="splashscreen" value="resources/icons/splash.png" /> 
+
 <gap:plugin name="org.apache.cordova.splashscreen" />
 <preference name="SplashScreenDelay" value="10000"/> 
+
+<!-- statusbar plugin en settings -->
+<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+<preference name="StatusBarOverlaysWebView" value="true" />
+<preference name="StatusBarBackgroundColor" value="#65bcab" />
+<preference name="StatusBarStyle" value="lightcontent" />
 
 
 
