@@ -44,7 +44,7 @@ permission on your app, which PhoneGap requires.
 <gap:plugin name="org.apache.cordova.splashscreen" /> <!-- prevents white flash -->
 <preference name="SplashScreenDelay" value="10000"/> <!-- prevents unloaded app -->
 
-<gap:plugin name="it.mobimentum.phonegapspinnerplugin" />
+<gap:plugin name="it.mobimentum.phonegapspinnerplugin" version="1.2.1" />
 
 <!-- statusbar plugin en settings -->
 <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
