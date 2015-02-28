@@ -41,8 +41,9 @@ permission on your app, which PhoneGap requires.
 <preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
 <preference name="AllowInlineMediaPlayback" value="true" />
 <preference name="auto-hide-splash-screen" value="false" /> <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
-<gap:plugin name="org.apache.cordova.splashscreen" /> <!-- prevents white flash -->
-<preference name="SplashScreenDelay" value="10000"/> <!-- prevents unloaded app -->
+
+<plugin name="SplashScreen" value="CDVSplashScreen" />
+
 
 
 
