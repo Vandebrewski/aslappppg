@@ -43,7 +43,8 @@ permission on your app, which PhoneGap requires.
 
 <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 <gap:plugin name="org.apache.cordova.splashscreen" />
-<preference name="auto-hide-splash-screen" value="true" /> 
+<preference name="auto-hide-splash-screen" value="true" />
+<preference name="SplashScreenDelay" value="30000"/>  
 
 <!-- statusbar plugin en settings -->
 <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
