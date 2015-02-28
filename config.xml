@@ -42,7 +42,7 @@ permission on your app, which PhoneGap requires.
 <preference name="AllowInlineMediaPlayback" value="true" />
 <preference name="auto-hide-splash-screen" value="false" /> <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 
-<plugin name="SplashScreen" value="CDVSplashScreen" />
+
 
 
 
