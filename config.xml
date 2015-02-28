@@ -41,10 +41,9 @@ permission on your app, which PhoneGap requires.
 <preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
 <preference name="AllowInlineMediaPlayback" value="true" />
 
-<preference name="auto-hide-splash-screen" value="false" /> <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
+<!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 <gap:plugin name="org.apache.cordova.splashscreen" />
-
-
+<preference name="auto-hide-splash-screen" value="false" /> 
 
 <!-- statusbar plugin en settings -->
 <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
