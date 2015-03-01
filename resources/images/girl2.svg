@@ -21,8 +21,10 @@
 	from {stroke-dashoffset: 1000; fill: yellow !important;}
 	to {stroke-dashoffset: 0; fill: red !important;}
 	}
+	
+	@-moz-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}
 
-	@-moz-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
+	@-webkit-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}	
 	
 </style></refs>
 <g id="spotlight">
@@ -138,7 +140,7 @@
 			C456.9,517.709,456.5,514.309,453.7,510.209z"/>
 	</g>
 </g>
-<g id="asl_1_">
+<g id="asl">
 	<g>
 		<path fill="#0990D3" d="M367.027,431.358l-2.596-6.823h-22.102l-2.596,6.972c-1.014,2.72-1.879,4.556-2.596,5.507
 			c-0.717,0.951-1.891,1.428-3.522,1.428c-1.385,0-2.609-0.507-3.671-1.521c-1.063-1.013-1.595-2.163-1.595-3.449
