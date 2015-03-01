@@ -10,9 +10,9 @@
 	-moz-animation: fadein 2s;
 	}
 		
-	@-moz-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}
-
-	@-webkit-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}	
+	@-moz-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
+	
+	@-webkit-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
 	}
 	
 </style></refs>
