@@ -3,9 +3,10 @@
 	<rect x="0.5" y="1" fill="#64BBA9" width="768" height="975"/>
 </g>
 <g id="Layer_11">
-	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="386.7793" y1="641.1094" x2="383.1994" y2="991.3987">
-		<stop  offset="0" style="stop-color:#1E8FD9;stop-opacity:0"/>
-		<stop  offset="1" style="stop-color:#1E8FD9;stop-opacity:0.5"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="386.7793" y1="641.1094" x2="383.1996" y2="991.3987">
+		<stop  offset="0" style="stop-color:#409D8B;stop-opacity:0"/>
+		<stop  offset="0.87" style="stop-color:#409D8B;stop-opacity:0.435"/>
+		<stop  offset="1" style="stop-color:#409D8B;stop-opacity:0.5"/>
 	</linearGradient>
 	<polygon opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" points="775,970.004 775,920.322 
 		429.426,690.603 775,885.924 775,847.365 435.514,684.918 775,820.441 775,788.252 440.327,678.611 775,765.606 775,737.102 
