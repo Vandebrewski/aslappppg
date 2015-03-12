@@ -18,9 +18,6 @@
     </author>
 
 	<gap:platform name="ios" />
-<!-- For in app purchase
-	<gap:plugin name="cc.fovea.plugins.inapppurchase" version="3.4.0" />
--->
  
 <!--
 If you do not want any permissions to be added to your app, add the
@@ -39,6 +36,10 @@ permission on your app, which PhoneGap requires.
 <preference name="detect-data-types" value="false" /> <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
 <preference name="exit-on-suspend" value="true" /> <!-- ios: if set to true, app will terminate when home button is pressed -->
 <preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+
+<!-- inapppurchase iOS plugin -->
+<gap:plugin name="cc.fovea.plugins.inapppurchase" version="3.4.0" />
+
 <preference name="AllowInlineMediaPlayback" value="true" />
 
 <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
