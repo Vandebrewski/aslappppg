@@ -20,7 +20,7 @@
 	<gap:platform name="ios" />
 
 <!-- inapppurchase iOS plugin -->
-<gap:plugin name="cc.fovea.plugins.inapppurchase" version="3.4.0" />
+<gap:plugin name="cc.fovea.plugins.inapppurchase" version="3.10.1" />
 
  
 <!--
