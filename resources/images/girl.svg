@@ -2,31 +2,49 @@
 <refs><style>
 
 	#star path {
-	-webkit-animation: fadein 4s 5s 3;
-	-moz-animation: fadein 4s 5s 3;
+	opacity: 0;
+	-webkit-animation: fadein 3s 4s forwards;
+	-moz-animation: fadein 3s 4s forwards;
 	}
 
 
 	#asl {
 	stroke-dasharray: 1000;
 	stroke-dashoffset: 1000;
-	-webkit-animation: dash 3s ease-in-out forwards;
-	-moz-animation: dash 3s ease-in-out forwards;
+	-webkit-animation: dash 3s 1s ease-in-out forwards;
+	-moz-animation: dash 3s 1s ease-in-out forwards;
 	}
 	
 	#asl path {
-    -webkit-animation: fill 2s 1s ease-in forwards;
-    -moz-animation: fill 2s 1s ease-in forwards;
+    -webkit-animation: fill 2s 2s ease-in forwards;
+    -moz-animation: fill 2s 2s ease-in forwards;
 	}
 	
 	@-moz-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}
 
 	@-webkit-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}
       
+	#spotlight {
+	opacity: 0;
+	-webkit-animation: fadein 0.5s 0.5s forwards;
+	-moz-animation: fadein 0.5s 0.5s forwards;
+	}
 	
-	#rainbow path, #kids {
-	-webkit-animation: fadein 2s;
-	-moz-animation: fadein 2s;
+	#girl {
+	-webkit-animation: fadein 1s forwards;
+	-moz-animation: fadein 1s forwards;
+	}
+	
+	#kids {
+	opacity: 0;
+	-webkit-animation: fadein 2s 2s linear forwards;
+	-moz-animation: fadein 2s 2s linear forwards;
+	}
+	
+	#rainbow path {
+	opacity: 0;
+	-webkit-animation: fadein 2s 3s linear forwards;
+	-moz-animation: fadein 2s 3s linear forwards;
 	}
 		
 	@-moz-keyframes dash {
@@ -91,7 +109,7 @@
 		</g>
 	</g>
 </g>
-<g id="girl_1_">
+<g id="girl">
 	<path fill="#DDE5CE" d="M602.972,657.904c-1.333-12.523-2.631-25.545-8.978-36.613c-1.851-3.213-3.414-5.734-4.727-7.838
 		c2.399-5.209,3.418-10.234,2.521-13.221c-20.3-65.4-56.9-170.201-81.8-234c-4.9-12.5-22-25.5-35.604-28.4
 		c-32.6-7-66.396-10.5-99.7-11c-44.714-0.607-74.145-10.224-96.483-35.622c0.969-20.174,7.789-40.168,21.277-55.436

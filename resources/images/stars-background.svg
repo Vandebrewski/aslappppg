@@ -1,17 +1,17 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 13.5 768 975" enable-background="new 0 13.5 768 975" xml:space="preserve">
 <refs><style>
-	#star path {
-	-webkit-animation: fadein 4s 5s 3;
-	-moz-animation: fadein 4s 5s 3;
+	#background {
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
 	}
-
-	#stars {
-	-webkit-animation: fadein 2s;
-	-moz-animation: fadein 2s;
+	
+	#stars path, #stars {
+	opacity: 0;
+	-webkit-animation: fadein 4s 2s forwards;
+	-moz-animation: fadein 4s 2s forwards;
 	}
 		
-	@-moz-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
-	
+	@-moz-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}		
 	@-webkit-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
 	}
 	
