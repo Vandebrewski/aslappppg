@@ -4,17 +4,8 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="308px"
 	 height="70px" viewBox="0 0 308 70" enable-background="new 0 0 308 70" xml:space="preserve">
 <g id="border_1_">
-	<g id="Layer_11">
-		<path fill="none" stroke="#9ED0BB" stroke-width="0.7202" stroke-miterlimit="10" d="M307.5,66.664
-			c0,1.423-2.729,2.836-5.481,2.836H5.98c-2.752,0-5.48-1.413-5.48-2.836V2.768C0.5,1.346,3.228,0,5.98,0h296.038
-			c2.754,0,5.481,1.346,5.481,2.768L307.5,66.664L307.5,66.664z"/>
-	</g>
 </g>
 <g id="Layer_1">
-	<g id="Layer_10" opacity="0.5">
-		<path fill="#65BCAB" d="M307,66.904c0,1.434-2.231,2.596-4.983,2.596H5.984C3.231,69.5,1,68.338,1,66.904V2.527
-			C1,1.094,3.231,0,5.984,0h296.033C304.769,0,307,1.094,307,2.527V66.904z"/>
-	</g>
 	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="155.4355" y1="14" x2="155.4355" y2="55.5005">
 		<stop  offset="0" style="stop-color:#65BCAB"/>
 		<stop  offset="0.1745" style="stop-color:#52AC9B"/>
