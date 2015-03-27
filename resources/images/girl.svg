@@ -1,66 +1,38 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 13.5 768 975" enable-background="new 0 13.5 768 975" xml:space="preserve">
 <refs><style>
-
 	#star path {
 	opacity: 0;
-	-webkit-animation: fadein 3s 4s forwards;
-	-moz-animation: fadein 3s 4s forwards;
+	-webkit-animation: fadein 3s 4s forwards
 	}
-
-
 	#asl {
 	stroke-dasharray: 1000;
 	stroke-dashoffset: 1000;
-	-webkit-animation: dash 3s 1s ease-in-out forwards;
-	-moz-animation: dash 3s 1s ease-in-out forwards;
+	-webkit-animation: dash 3s 1s ease-in-out forwards
 	}
-	
 	#asl path {
-    -webkit-animation: fill 2s 2s ease-in forwards;
-    -moz-animation: fill 2s 2s ease-in forwards;
+    -webkit-animation: fill 2s 2s ease-in forwards
 	}
-	
-	@-moz-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}
-
-	@-webkit-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}
-      
+	@-webkit-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3}}     
 	#spotlight {
 	opacity: 0;
-	-webkit-animation: fadein 0.5s 0.5s forwards;
-	-moz-animation: fadein 0.5s 0.5s forwards;
+	-webkit-animation: fadein 0.5s 0.5s forwards
 	}
-	
 	#girl {
-	-webkit-animation: fadein 1s forwards;
-	-moz-animation: fadein 1s forwards;
+	-webkit-animation: fadein 1s forwards
 	}
-	
 	#kids {
 	opacity: 0;
-	-webkit-animation: fadein 2s 2s linear forwards;
-	-moz-animation: fadein 2s 2s linear forwards;
+	-webkit-animation: fadein 2s 2s linear forwards
 	}
-	
 	#rainbow path {
 	opacity: 0;
-	-webkit-animation: fadein 2s 3s linear forwards;
-	-moz-animation: fadein 2s 3s linear forwards;
-	}
-		
-	@-moz-keyframes dash {
-	from {stroke-dashoffset: 1000; fill: yellow !important;}
-	to {stroke-dashoffset: 0; fill: red !important;}
-	}
-
+	-webkit-animation: fadein 2s 3s linear forwards
+	}		
 	@-webkit-keyframes dash {
-	from {stroke-dashoffset: 1000; fill: yellow !important;}
-	to {stroke-dashoffset: 0; fill: red !important;}
+	from {stroke-dashoffset: 1000; fill: yellow !important}
+	to {stroke-dashoffset: 0; fill: red !important}
 	}
-
-	@-moz-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
-	
 	@-webkit-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
-	
 </style></refs>
 <g id="spotlight">
 	<g id="Layer_7">
