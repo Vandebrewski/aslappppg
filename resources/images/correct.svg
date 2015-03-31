@@ -1,0 +1,79 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="130px"
+	 height="90px" viewBox="0 0 130 90" style="enable-background:new 0 0 130 90;" xml:space="preserve">	 
+<refs><style>
+#smile {opacity: 0;-webkit-animation: fadein 1s .5s forwards}
+@-webkit-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}		
+</style></refs>	 
+<g id="Layer_1">
+	<path style="fill:#DDE5CE;" d="M101.322,44.806c0.01-0.364,0.016-0.729,0.016-1.094c0-21.007-16.199-38.036-36.182-38.036
+		c-19.983,0-36.181,17.029-36.181,38.036c0,0.341,0.004,0.682,0.013,1.022c-29.974,6.313-26.275,37.37-7.261,37.896
+		c-1.132-10.303,1.471-21.281,8.396-29.163C34.15,70.582,48.308,85,65.156,85c16.744,0,30.829-14.242,34.956-31.217
+		c6.72,7.857,9.239,18.682,8.121,28.848C127.175,82.105,130.922,51.285,101.322,44.806z"/>
+	<g>
+		<g>
+			<g>
+				
+					<ellipse style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#000000;stroke-width:0.3231;stroke-linecap:round;stroke-linejoin:round;" cx="55.874" cy="48.523" rx="7.445" ry="10.241"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M57.568,34.146c0,0-1.018,2.391,1.015,5.121"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M59.936,35.892c0,0-1.014,3.073,1.014,5.802"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M49.782,35.549c0,0-1.015,3.072,1.018,5.806"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M55.536,32.457c0,0-2.708,3.416,0.679,6.148"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M52.489,33.808c0,0-2.367,2.75,0.679,5.137"/>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M62.898,32.457c-1.673-2.151-4.274-3.534-7.192-3.534
+					c-2.919,0-5.521,1.383-7.191,3.534c1.942-1.353,4.452-2.167,7.191-2.167C58.447,30.29,60.954,31.104,62.898,32.457z"/>
+				<g>
+					<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M49.323,49.429c0-2.498,2-4.521,4.468-4.521
+						c2.465,0,4.465,2.022,4.465,4.521c0,2.494-2,4.517-4.465,4.517C51.323,53.945,49.323,51.923,49.323,49.429z"/>
+					<ellipse style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" cx="55.279" cy="47.318" rx="1.788" ry="1.806"/>
+					<ellipse style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" cx="51.475" cy="52.109" rx="1.014" ry="1.023"/>
+				</g>
+			</g>
+			<g>
+				
+					<ellipse style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#000000;stroke-width:0.3231;stroke-linecap:round;stroke-linejoin:round;" cx="77.364" cy="48.523" rx="7.445" ry="10.241"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M79.06,34.146c0,0-1.019,2.391,1.014,5.121"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M81.428,35.892c0,0-1.015,2.391,1.014,5.12"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M71.272,35.549c0,0-1.015,2.392,1.015,5.121"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M77.027,32.457c0,0-2.707,3.416,0.678,6.148"/>
+				
+					<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.3231;stroke-linecap:square;stroke-linejoin:round;" d="
+					M73.98,33.808c0,0-2.369,3.072,0.679,5.459"/>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M84.387,32.457c-1.671-2.151-4.271-3.534-7.192-3.534
+					c-2.917,0-5.518,1.383-7.191,3.534c1.945-1.353,4.452-2.167,7.191-2.167C79.935,30.29,82.445,31.104,84.387,32.457z"/>
+				<g>
+					<ellipse style="fill-rule:evenodd;clip-rule:evenodd;" cx="75.281" cy="49.429" rx="4.466" ry="4.521"/>
+					<ellipse style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" cx="76.769" cy="47.318" rx="1.787" ry="1.806"/>
+					<ellipse style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" cx="73.473" cy="52.449" rx="1.015" ry="1.024"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="smile">
+	<g>
+		<path style="fill:#261B0D;" d="M42,62c0,0,21.518,5.924,43.973,1.53c0,0-5.873,16.852-22.62,16.269C46.356,79.208,42,62,42,62z"/>
+		<path style="fill:#FFFFFF;" d="M49.421,64.736c0,0,7.366,1.642,14.569,1.892c7.204,0.251,14.516-0.587,14.516-0.587
+			s-4.355,6.48-14.778,6.117C53.308,71.796,49.421,64.736,49.421,64.736z"/>
+		<path style="fill:#BC3B4A;" d="M63.343,79.58c5.58,0.142,9.635-1.333,9.475-2.391c-0.161-1.059-5.861-2.002-9.268-2.121
+			c-3.406-0.118-9.023,0.782-9.059,1.79S58.652,79.46,63.343,79.58z"/>
+	</g>
+</g>
+</svg>
