@@ -13,5 +13,11 @@
 {"Id":12, "plaatje":"walk"},
 {"Id":13, "plaatje":"teacher"},
 {"Id":14, "plaatje":"black"},
-{"Id":15, "plaatje":"white"}
+{"Id":15, "plaatje":"white"},
+{"Id":16, "plaatje":"red"},
+{"Id":17, "plaatje":"candy"},
+{"Id":18, "plaatje":"ice cream"},
+{"Id":19, "plaatje":"bath"},
+{"Id":20, "plaatje":"book"},
+{"Id":21, "plaatje":"deer"}
 ]}

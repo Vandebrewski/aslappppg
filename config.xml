@@ -49,7 +49,7 @@ permission on your app, which PhoneGap requires.
 <gap:plugin name="org.apache.cordova.splashscreen" />
 <preference name="auto-hide-splash-screen" value="false" />
 <preference name="FadeSplashScreen" value="true" />  
-<preference name="FadeSplashScreenDuration" value="1.0" />
+<preference name="FadeSplashScreenDuration" value="0.5" />
 
 <!-- statusbar plugin en settings -->
 <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
