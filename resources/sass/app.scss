@@ -1,0 +1,794 @@
+$base-color: #65bcab;
+$include-pictos-font: false;
+$include-default-icons: false;
+$include-highlights: false;
+$base-gradient: none;
+$basic-slider: true;
+$body-bg-color: #65bcab;
+$list-pressed-color: none;
+$loading-spinner-color: #409d8b;
+
+$experimental-support-for-mozilla : false;
+$experimental-support-for-webkit : false;
+$support-for-original-webkit-gradients : false;
+$experimental-support-for-opera : false;
+$experimental-support-for-microsoft : false;
+$experimental-support-for-khtml : false;
+
+// exclude components that app is not using
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/src/tab/Panel';
+
+
+@font-face {
+  font-family: 'Handlee';
+  src: url('../fonts/Handlee-Regular.ttf')
+}
+  
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.ttf')}  
+
+.again, h3, .quizTitle, .resulttext, .x-dataview-item, .x-list .x-list-item, .audioButton, .menu-hint, .x-msgbox-text, .parentalgate {
+  font-family: 'Handlee', Helvetica Neue;
+  color: #dde5cd !important;
+}
+
+
+body {
+  background-color: #65bcab
+}
+
+//-------------------------------------------- MENU -------------------------------------------
+
+#nav-menu {
+  background-color: #E56072;
+  background-image: url('../images/navback.svg') !important;
+  background-repeat: no-repeat !important;
+  color: #dde5cd;
+  padding: 0 0 0 20px
+}
+
+.x-list .x-list-item.x-item-pressed {
+ background-color: transparent !important;
+border: 1px dashed rgba(222, 227, 206, 0.40) !important;
+}
+
+.x-list .x-list-item.x-item-selected .x-dock-horizontal {
+background-color: transparent !important;
+border: 1px dashed rgba(222, 227, 206, 0.40) !important;
+}
+
+.x-list .x-list-item.x-item-selected.x-list-item-tpl {
+background-color: transparent !important;
+border: 1px dashed rgba(222, 227, 206, 0.40) !important;
+}
+
+.menu-icon-big {
+  font-size: 60px;
+  margin: 15px 0 0 0;
+  font-family: 'icomoon';
+  width: 100px;
+  color: rgba(221, 229, 206, 0.7) !important
+}
+
+.menu-icon-small {
+  font-size: 30px;
+  margin: 5px 0 5px;
+  font-family: 'icomoon';
+  width:100px;
+  color: rgba(221, 229, 206, 0.7) !important
+}
+
+#nav-menu .x-list .x-list-item {
+ margin: 25px 0;
+  width: auto;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+
+//-------------------------------------------- Hmme -------------------------------------------
+
+.homescreen {
+background-color: #65bcab !important;
+background-image: url('../images/girl.svg'), url('../images/stars-background.svg') !important;
+background-position: center center, center top !important;
+background-repeat: no-repeat !important
+}
+  
+.menu-hint {
+  -webkit-animation: menudown 3s;
+  -webkit-animation-delay: 4s;
+ position: absolute;
+  bottom: 150px;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: #f4c151;
+  opacity:0;
+  color: #c53c4c !important;
+  padding-top: 20px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 28px
+}
+
+@-webkit-keyframes menudown {
+    0% { bottom: 0; opacity: 0; }
+    75%   { bottom: 20px; opacity: 1;}
+    100%   { bottom: 0; opacity: 0;}
+}
+//-------------------------------------------- list ------------------------------------------- 
+
+.gebarendetail {
+ background-color: #64bba9 !important;
+ background-image: url('../images/textballoon.svg'), url('../images/rainbow.svg') !important;
+ background-position: center 15px, center bottom !important;
+background-repeat: no-repeat !important
+}
+
+.listdetailimage {
+  top:15px
+}
+
+
+.gebarenlijst {
+  background-color: #65bcab !important;
+  text-align: center
+}
+
+.gebarenlijst img {
+//clip-path: circle(100px at center);
+width: 140px;
+height: auto;
+-webkit-transform: translate(-23px,0);
+transform: translate(-23px,0);
+overflow: hidden;
+margin-bottom: -15px
+}
+
+.x-dock.x-sized > .x-dock-body > .x-body > .x-inner { 
+  top: 20px !important
+}
+
+.x-list .x-list-item {
+display:inline-block;
+  margin: 2px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #9ED0BB;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em
+}
+
+.x-list .x-list-item.x-list-item-tpl .x-innerhtml {
+  padding:0
+}
+
+
+//-------------------------------------------- INFO-------------------------------
+
+.infoscreen {
+ background: -webkit-linear-gradient(#409d8b, #65bcab) !important; /* For Safari 5.1 to 6.0 */
+}
+
+h3 {margin:0; padding: 10px 0 10px 0; font-size: 1.4em !important} 
+
+h4 {color: #A9D1BC !important; font-size: 1em !important; text-align: center} 
+
+.x-html {
+  padding: 20px 5px 0 5px !important
+}
+
+.infotext {
+  line-height: 1.6 !important;
+  color: #dde5cd;
+  font-size: 1.1em !important;
+  padding: 0 5% !important
+//  font-family: 'Helvetica Neue'
+}
+
+//-------------------------------------------- BUTTONS -------------------------------------------
+
+.closebutton {
+  width: 40px;
+  height: 40px;
+  display:block;
+  position:absolute;
+  top:-20px;
+  right: -20px;
+  background-image: url("../images/closebutton.svg") !important;
+  background-size: 40px auto;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border: 0px none !important
+}
+
+.homebutton {
+  height: 100%;
+  width: 100px !important
+}
+
+.audioButton {
+background-image: url("../images/audio.svg") !important;
+background-size: 60px auto;
+background-position: center bottom !important;
+background-repeat: no-repeat !important;
+border: 0px none !important;
+width:100px;
+padding: 0px 0px 60px !important;
+font-size: 1.1em;
+margin-top:-10px;
+z-index: 4
+}
+
+.x-button-icon .x-shown menu .x-button-label {
+  color: #dde5cd !important;  
+  letter-spacing: 1px !important;
+  text-align: left !important;
+  font-family: Helvetica Neue 
+}
+
+.x-button-label {
+color: #dde5cd
+}
+
+.backButton  {
+  background-image: url('../images/back.svg') !important;
+  background-size: 58px;
+  background-position: 0 0 !important;
+  background-repeat: no-repeat !important;
+ height: 60px;
+   width: 60px;
+   margin: -40px 0 0 10px;
+    border: none;
+    z-index: 4
+}
+
+.nextButton  {
+  background-image: url('../images/next.svg') !important;
+  background-size: 58px;
+  background-position: 0 0 !important;
+  background-repeat: no-repeat !important;
+ height: 60px;
+  width: 60px;
+   margin: -40px 10px 0 0;
+    border: none;
+    z-index: 4
+}
+
+.again {
+     background-image: url('../images/quizreplay.svg')!important;
+     background-position: center center;
+     background-size: 60px;
+   background-repeat: no-repeat;
+   width: 200px !important;
+   height: 80px !important; 
+   border: 0 !important;
+    font-size: 2em;
+    margin: 0 auto
+}
+
+
+.listbuybutton, .quizresultbuybutton, .restoreButton {
+  width: 308px;
+  height: 70px;
+  background-image: url('../images/listbuybutton.svg') !important;
+  background-repeat: no-repeat !important;
+  margin:0 auto;
+  border: none;
+  font-size: 16px;
+  color: #ecefe6
+}
+
+.restoreButton {
+    background-image: url('../images/restorebutton.svg') !important;
+}
+
+//-------------------------------------------- PLAY / QUIZ -------------------------------------
+.quizbackground {
+  background-image: url('../images/quizbackground.svg') !important;
+  background-color: #65bcab !important;
+  background-size: auto 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important
+}
+
+.quizTitle {
+  font-size: 1.4em;
+  background-color: transparent;
+  border: none !important;
+  color: #dde5cd;
+  padding: 25px 25px 0 25px
+}
+
+.centerQuizOptions {
+text-align: center !important;
+}
+
+.x-dataview-item {
+  display:inline-block;
+  margin: 2px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #dde5cd;
+  border-radius: 5px;
+  font-size: 1em
+}
+
+.x-dataview-item img {
+width: 140px;
+height: auto;
+-webkit-transform: translate(-23px,0);
+transform: translate(-23px,0);
+overflow: hidden;
+margin-bottom: -15px
+}
+
+.x-msgbox {
+height: 400px;
+border: medium none;
+background-color: #0990D3;
+border-radius: 10px;
+color: #DDE4CE
+}
+
+.parentalgate {
+width: 280px;
+height: 400px;
+border: medium none;
+background-color: #0990D3 !important;
+  background-image: url('../images/parentalgate.svg') !important;
+  background-repeat: no-repeat !important;
+border-radius: 10px;
+padding: 25px !important;
+text-align: center;
+padding: 0 10px;
+margin: 5px
+}
+
+span.number {
+  background-color: #d29f1c;
+  margin: 0 10px;
+  padding: 0 10px;
+  font-size: 22px;
+
+  &.active {
+    opacity: 0.5;
+  }
+}
+
+
+.enterthenumbers {
+margin: 75px 0 20px 0;
+}
+
+.parentalgate .x-button {
+    background-color: transparent !important;
+    margin: 10px 5px 0 5px;
+    font-size: 30px;
+    border-radius: 5px
+}
+
+
+.x-panel.x-floating .x-panel-inner {
+  background-color: transparent
+}
+
+.x-msgbox-buttons .x-button {
+width: 100%;
+background-color: #ea5f72 !important;
+height: 70px !important;
+// color: #dde5ce;
+border-radius: 10px
+}
+
+.x-toolbar {
+border-radius: 10px
+}
+
+.resulttext {
+  font-size: 1.7em;
+  text-align: center !important
+}
+
+.resulttext img {
+  margin: 7px auto
+}
+
+
+.quizresult {
+  width: 300px;
+  height:60px;
+  margin: 10px auto;
+}
+
+.resultcount0 {
+  background-image: url('../images/quizscore0.svg') !important
+}
+
+.resultcount1 {
+  background-image: url('../images/quizscore1.svg') !important
+}
+
+.resultcount2 {
+  background-image: url('../images/quizscore2.svg') !important
+}
+
+.resultcount3 {
+  background-image: url('../images/quizscore3.svg') !important
+}
+
+.resultcount4 {
+  background-image: url('../images/quizscore4.svg') !important
+}
+
+.resultcount5 {
+  background-image: url('../images/quizscore5.svg') !important
+}
+
+.quizcounter{
+ width: 63px;
+ height: 35px;
+ float: right;
+ background-position: center center !important;
+ background-repeat: no-repeat !important
+}
+
+.count1 {
+ background-image: url('../images/count1.png') !important
+}
+
+.count2 {
+ background-image: url('../images/count2.png') !important
+}
+
+.count3 {
+ background-image: url('../images/count3.png') !important
+}
+
+.count4 {
+ background-image: url('../images/count4.png') !important
+}
+
+.count5 {
+ background-image: url('../images/count5.png') !important
+}
+
+
+
+//-------------------------------------------- VIDEO -------------------------------------------
+
+
+.x-button {
+background-color: transparent !important
+}
+
+.x-layout-card-item {
+  background: transparent
+}
+
+//-------------------------------------------- ANIMATION -------------------------------------------
+
+  
+.fade-in {-webkit-animation: fadein .3s;}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+//@-webkit-keyframes fadeout {
+//    from { opacity: 1; }
+//    to   { opacity: 0; }
+//}
+
+
+
+//.swipe-animation {-webkit-animation: swipeanimation 1s steps(30) 4 alternate; width: 86px; height: 103px; float: right;}
+//@-webkit-keyframes swipeanimation {
+//  -webkit-animation-timing-function: linear;
+//   0% {padding-left:0;}
+//   100% {padding-left:70px;}
+//}
+
+//-------------------------------------------- Bottom menu bar -------------------------------------------   
+
+.x-tabbar-dark.x-docked-bottom .x-tab-active {
+background-image: none !important;
+background-color: transparent !important;
+}
+
+.x-tabbar.x-docked-bottom {
+ border-top-width: 0px !important;
+}
+
+.x-tabbar.x-docked-bottom .x-tab .x-button-icon {
+   font-size: 1.3em;
+  height: 1.2em
+}
+
+.x-tabbar.x-docked-bottom .x-tab .x-button-icon {
+width: 3em;
+
+}
+
+.x-img.x-img-background {
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+.x-tabbar-dark {
+  border-top-color: #409d8b !important; 
+  border-bottom-color: #409d8b !important; 
+  background-image: #409d8b !important; 
+  background-color: #409d8b !important;
+}
+
+//-------------------------------------------- NAVIGATION ICONS -------------------------------------------
+
+@include icon-font('icomoon', inline-font-files ('../fonts/icomoon.ttf'));
+@include icon("menu", "\e601", "icomoon");
+
+//-------------------------------------------- iPad specific -------------------------------------------
+
+ 
+@media screen and (min-device-width: 768px) and (max-device-width : 1024px) {
+video {
+ width: 768px !important;
+ height: 432px !important;
+ -webkit-animation: fadein 0.3s ease-in !important;
+ bottom: 0 !important
+}
+
+.again {
+ background-size: 80px auto;
+ margin-top: 20px  
+}
+
+.videoborderoverlay {
+  width: 768px;
+  height: 5px;
+  background-color: #64bba9;
+  position: absolute;
+  bottom: 430px;
+  z-index: 2
+} 
+
+.quizvideoborderoverlay1 {
+  width: 768px;
+  height: 4px;
+  background-color: #64bba9;
+  position: absolute;
+  top: 60px;
+  z-index: 2
+}
+
+.quizvideoborderoverlay2 {
+  width: 768px;
+  height: 4px;
+  background-color: #64bba9;
+  position: absolute;
+  top: 492px;
+  z-index: 2
+}
+.x-dataview-item {
+margin: 10px
+}
+
+.resulttext {
+ margin-top: 200px;
+}
+
+.resulttext img {
+  margin: 30px 0
+}
+.audioButton {
+  margin-top: -50px;
+  font-size: 1.5em
+}
+
+
+.quizTitle {
+  font-size: 2em
+}
+
+} 
+
+
+//-------------------------------------------- iPhone 6+ specific -------------------------------------------
+
+@media screen and (min-device-width: 414px) and (max-device-width : 415px) {
+video {
+ width: 414px !important;
+ height: 233px !important;
+ -webkit-animation: fadein 0.3s ease-in !important;
+   bottom: 0 !important
+}
+
+.videoborderoverlay {
+  width: 414px;
+  height: 5px;
+  background-color: #64bba9;
+  position: absolute;
+  bottom: 232px;
+  z-index: 2
+}
+
+.quizvideoborderoverlay1 {
+  width: 414px;
+  height: 4px;
+  background-color: #64bba9;
+//  background-color: red;
+  position: absolute;
+  top: 122px;
+  z-index: 2
+}
+.quizvideoborderoverlay2 {
+  width: 414px;
+  height: 5px;
+  background-color: #64bba9;
+//  background-color: red;
+  position: absolute;
+  top: 354px;
+  z-index: 2
+}
+
+.again {
+ background-size: 80px auto;
+ margin-top: 20px  
+}
+
+.resulttext {
+ margin-top: 100px;
+}
+
+.resulttext img {
+  margin: 20px 0
+}
+
+ 
+}
+
+
+//-------------------------------------------- iPhone 6 specific -------------------------------------------
+
+@media screen and (min-device-width: 375px) and (max-device-width : 376px) {
+video {
+ width: 375px !important;
+ height: 211px !important;
+ -webkit-animation: fadein 0.3s ease-in !important;
+   bottom: 0 !important
+}
+
+.videoborderoverlay {
+  width: 375px;
+  height: 5px;
+  background-color: #64bba9;
+  position: absolute;
+  bottom: 209px;
+  z-index: 2
+}
+
+.quizvideoborderoverlay1 {
+  width: 375px;
+  height: 4px;
+  background-color: #64bba9;
+//  background-color: red;
+  position: absolute;
+  top: 90px;
+  z-index: 2
+}
+.quizvideoborderoverlay2 {
+  width: 375px;
+  height: 5px;
+  background-color: #64bba9;
+//  background-color: red;
+  position: absolute;
+  top: 301px;
+  z-index: 2
+} 
+
+.again {
+ background-size: 80px auto;
+ margin-top: 20px  
+}
+
+.resulttext {
+ margin-top: 50px;
+}
+
+.resulttext img {
+  margin: 20px 0
+}
+
+}
+
+
+//-------------------------------------------- iPhone 2,3,4,5 specific -------------------------------------------
+
+@media screen and (min-device-width: 320px) and (max-device-width : 321px) {
+video {
+ width: 320px !important;
+ height: 180px !important;
+ -webkit-animation: fadein 0.3s ease-in !important;
+  bottom: 0 !important
+}
+
+.videoborderoverlay {
+  width: 320px;
+  height: 5px;
+  background-color: #64bba9;
+  position: absolute;
+  bottom: 179px;
+  z-index: 2
+}
+}
+
+//-------------------------------------------- iPhone 2,3,4, NOT 5 specific -------------------------------------------
+
+@media screen and (min-device-height: 480px) and (max-device-height : 481px) {
+
+.gebarendetail {
+// background-color: #64bba9 !important;
+// background-image: url('../images/textballoon.svg'), url('../images/rainbow.svg') !important;
+ background-position: center top, center bottom !important;
+//background-repeat: no-repeat !important
+}
+
+.listdetailimage {
+  top:0
+}
+  
+.resulttext {
+ font-size: 1em
+}
+
+.quizTitle {
+    font-size: 1.2em
+}
+.quizvideoborderoverlay1 {
+  width: 320px;
+  height: 4px;
+//  background-color: #64bba9;
+  background-color: #64bba9;
+  position: absolute;
+  top: 21px;
+  z-index: 2
+}
+.quizvideoborderoverlay2 {
+  width: 320px;
+  height: 4px;
+//  background-color: #64bba9;
+  background-color: #64bba9;
+  position: absolute;
+  top: 201px;
+  z-index: 2
+}
+}
+
+//-------------------------------------------- iPhone 5 specific -------------------------------------------  
+
+@media screen and (min-device-height: 567px) and (max-device-height : 569px) {
+  
+.quizvideoborderoverlay1 {
+  width: 320px;
+  height: 4px;
+  background-color: #64bba9;
+  position: absolute;
+  top: 66px;
+  z-index: 2
+}
+.quizvideoborderoverlay2 {
+  width: 320px;
+  height: 4px;
+  background-color: #64bba9;
+  position: absolute;
+  top: 246px;
+  z-index: 2
+}
+}
