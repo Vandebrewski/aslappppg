@@ -23,6 +23,9 @@
 <!-- inapppurchase iOS plugin -->
 <gap:plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" />
 
+<!-- android video fix -->
+<gap:plugin name="com.jaeger.html5video" version="1.2.1" />
+
  
 <!--
 If you do not want any permissions to be added to your app, add the
