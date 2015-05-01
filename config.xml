@@ -18,6 +18,7 @@
     </author>
 
 	<gap:platform name="ios" />
+	<gap:platform name="android" />
 
 <!-- inapppurchase iOS plugin -->
 <gap:plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" />
