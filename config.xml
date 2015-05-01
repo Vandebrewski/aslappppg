@@ -23,8 +23,7 @@
 <!-- inapppurchase iOS plugin -->
 <gap:plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" />
 
-<!-- android video fix -->
-<gap:plugin name="com.dawsonloudon.videoplayer" version="1.0.0" />
+
 
  
 <!--
