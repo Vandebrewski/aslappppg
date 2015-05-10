@@ -24,9 +24,9 @@
 <!-- inapppurchase iOS plugin -->
 <gap:plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" />
 
+<feature name="http://api.phonegap.com/1.0/media"/>
 
-
-<application android:hardwareAccelerated="true">
+<!-- <application android:hardwareAccelerated="true"> -->
  
 <!--
 If you do not want any permissions to be added to your app, add the
