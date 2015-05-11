@@ -106,6 +106,6 @@ permission on your app, which PhoneGap requires.
     <gap:splash src="resources/splash/1242x2208.png" gap:platform="ios" width="1242" height="2208"/> <!-- iPhone 6 plus  -->
 
 
-    <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
+    <access origin="*"/> <!-- allow local pages -->
 
 </widget>
