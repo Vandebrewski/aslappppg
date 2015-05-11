@@ -24,7 +24,9 @@
 <!-- inapppurchase iOS plugin -->
 <gap:plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" />
 
+<!-- added this for Android, not sure it needs it -->
 <feature name="http://api.phonegap.com/1.0/media"/>
+<gap:plugin name="com.dawsonloudon.videoplayer" version="1.0.0" />
 
 <!-- <application android:hardwareAccelerated="true"> -->
  
