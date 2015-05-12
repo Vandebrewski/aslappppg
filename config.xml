@@ -21,12 +21,19 @@
 	<gap:platform name="ios" />
 	<gap:platform name="android" />
 
-<!-- inapppurchase iOS plugin -->
+<!-- inapppurchase iOS plugin change json in plugin for Android -->
 <gap:plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" />
 
 <!-- added this for Android, not sure it needs it -->
 <feature name="http://api.phonegap.com/1.0/media"/>
 <gap:plugin name="com.moust.cordova.videoplayer" version="1.0.0" />
+
+<!-- added this for Android -->
+<gap:config-file platform="android" parent="/manifest">
+	<
+		android:hardwareAccelerated="true"
+ />
+</gap:config-file>
 
 
 <!-- <application android:hardwareAccelerated="true"> -->
