@@ -28,13 +28,6 @@
 <feature name="http://api.phonegap.com/1.0/media"/>
 <gap:plugin name="com.moust.cordova.videoplayer" version="1.0.0" />
 
-<!-- added this for Android -->
-<gap:config-file platform="android" parent="/manifest">
-	<
-		android:hardwareAccelerated="true"
- />
-</gap:config-file>
-
 
 <!-- <application android:hardwareAccelerated="true"> -->
  
