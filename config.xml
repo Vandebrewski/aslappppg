@@ -6,12 +6,12 @@
         xmlns:android   = "http://schemas.android.com/apk/res/android"
         id        = "com.basvanderwilk.aslkids"
         versionCode = "10"
-        version   = "1.2.0">
+        version   = "1.1.0">
 
-    <name>ASL Kids: Sign language</name>
+    <name>ASLKids</name>
 
     <description>
-       Learn sign language in a fun way: ASL kids
+       Learn ASL in a fun way
     </description>
 
     <author href="http://asl-kids.com" email="info@asl-kids.com">
