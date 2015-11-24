@@ -22,8 +22,9 @@
 <!--	<gap:platform name="android" /> -->
 
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
-	<plugin name="cc.fovea.cordova.purchase" source="pgb" />
+
 	
+	<gap:plugin name="cc.fovea.cordova.purchase" source="npm" version="3.11.0" />
 
 
 <!-- added this for Android, not sure it needs it 
