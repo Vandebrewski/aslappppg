@@ -22,7 +22,9 @@
 <!--	<gap:platform name="android" /> -->
 
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
-<!-- <gap:plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" /> -->
+	<plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" />
+	
+
 
 <!-- added this for Android, not sure it needs it 
 <feature name="http://api.phonegap.com/1.0/media"/>
