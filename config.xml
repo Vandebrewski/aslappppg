@@ -22,7 +22,7 @@
 <!--	<gap:platform name="android" /> -->
 
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
-	<plugin name="cc.fovea.cordova.purchase" source="plugins.cordova.io" />
+	<plugin name="cc.fovea.cordova.purchase" source="pgb" />
 	
 
 
