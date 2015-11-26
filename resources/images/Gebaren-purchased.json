@@ -3,7 +3,8 @@
 {"Id":2, "plaatje":"boat"},
 {"Id":3, "plaatje":"subway"},
 {"Id":4, "plaatje":"horse"},
-{"Id":5, "plaatje":"butterfly"},{"Id":6, "plaatje":"dolphin"},
+{"Id":5, "plaatje":"butterfly"},
+{"Id":6, "plaatje":"dolphin"},
 {"Id":7, "plaatje":"fish"},
 {"Id":8, "plaatje":"cat"},
 {"Id":9, "plaatje":"kangaroo"},
@@ -103,7 +104,7 @@
 {"Id":103, "plaatje":"swimming"},
 {"Id":104, "plaatje":"table"},
 {"Id":105, "plaatje":"thank you"},
-{"Id":106, "plaatje":"thursty"},
+{"Id":106, "plaatje":"thirsty"},
 {"Id":107, "plaatje":"towel"},
 {"Id":108, "plaatje":"grandpa"}
 ]}
