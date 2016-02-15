@@ -1,4 +1,5 @@
-cordova.define("cc.fovea.cordova.purchase.InAppPurchase", function(require, exports, module) { var store = {};
+cordova.define("cc.fovea.cordova.purchase.InAppBillingPlugin", function(require, exports, module) {
+var store = {};
 
 store.verbosity = 0;
 
@@ -722,313 +723,216 @@ store.verbosity = 0;
 
 (function() {
     "use strict";
-    var exec = function(methodName, options, success, error) {
-        cordova.exec(success, error, "InAppPurchase", methodName, options);
+    var log = function(msg) {
+        console.log("InAppBilling[js]: " + msg);
     };
-    var protectCall = function(callback, context) {
-        if (!callback) {
-            return;
-        }
-        try {
-            var args = Array.prototype.slice.call(arguments, 2);
-            callback.apply(this, args);
-        } catch (err) {
-            log("exception in " + context + ': "' + err + '"');
-        }
-    };
-    var InAppPurchase = function() {
+    var InAppBilling = function() {
         this.options = {};
-        this.receiptForTransaction = {};
-        this.receiptForProduct = {};
-        if (window.localStorage && window.localStorage.sk_receiptForTransaction) this.receiptForTransaction = JSON.parse(window.localStorage.sk_receiptForTransaction);
-        if (window.localStorage && window.localStorage.sk_receiptForProduct) this.receiptForProduct = JSON.parse(window.localStorage.sk_receiptForProduct);
     };
-    var noop = function() {};
-    var log = noop;
-    var ERROR_CODES_BASE = 6777e3;
-    InAppPurchase.prototype.ERR_SETUP = ERROR_CODES_BASE + 1;
-    InAppPurchase.prototype.ERR_LOAD = ERROR_CODES_BASE + 2;
-    InAppPurchase.prototype.ERR_PURCHASE = ERROR_CODES_BASE + 3;
-    InAppPurchase.prototype.ERR_LOAD_RECEIPTS = ERROR_CODES_BASE + 4;
-    InAppPurchase.prototype.ERR_CLIENT_INVALID = ERROR_CODES_BASE + 5;
-    InAppPurchase.prototype.ERR_PAYMENT_CANCELLED = ERROR_CODES_BASE + 6;
-    InAppPurchase.prototype.ERR_PAYMENT_INVALID = ERROR_CODES_BASE + 7;
-    InAppPurchase.prototype.ERR_PAYMENT_NOT_ALLOWED = ERROR_CODES_BASE + 8;
-    InAppPurchase.prototype.ERR_UNKNOWN = ERROR_CODES_BASE + 10;
-    InAppPurchase.prototype.ERR_REFRESH_RECEIPTS = ERROR_CODES_BASE + 11;
-    var initialized = false;
-    InAppPurchase.prototype.init = function(options, success, error) {
+    InAppBilling.prototype.init = function(success, fail, options, skus) {
+        if (!options) options = {};
         this.options = {
-            error: options.error || noop,
-            ready: options.ready || noop,
-            purchase: options.purchase || noop,
-            purchaseEnqueued: options.purchaseEnqueued || noop,
-            purchasing: options.purchasing || noop,
-            finish: options.finish || noop,
-            restore: options.restore || noop,
-            receiptsRefreshed: options.receiptsRefreshed || noop,
-            restoreFailed: options.restoreFailed || noop,
-            restoreCompleted: options.restoreCompleted || noop
+            showLog: options.showLog !== false
         };
-        if (options.debug) {
-            exec("debug", [], noop, noop);
-            log = function(msg) {
-                console.log("InAppPurchase[js]: " + msg);
-            };
-        }
-        if (options.noAutoFinish) {
-            exec("noAutoFinish", [], noop, noop);
-        }
-        var that = this;
-        var setupOk = function() {
+        if (this.options.showLog) {
             log("setup ok");
-            protectCall(that.options.ready, "options.ready");
-            protectCall(success, "init.success");
-            initialized = true;
-            that.processPendingUpdates();
-        };
-        var setupFailed = function() {
-            log("setup failed");
-            protectCall(options.error, "options.error", InAppPurchase.prototype.ERR_SETUP, "Setup failed");
-            protectCall(error, "init.error");
-        };
-        this.loadAppStoreReceipt();
-        exec("setup", [], setupOk, setupFailed);
-    };
-    InAppPurchase.prototype.purchase = function(productId, quantity) {
-        quantity = quantity | 0 || 1;
-        var options = this.options;
-        if (!InAppPurchase._productIds || InAppPurchase._productIds.indexOf(productId) < 0) {
-            var msg = "Purchasing " + productId + " failed.  Ensure the product was loaded first with storekit.load(...)!";
-            log(msg);
-            if (typeof options.error === "function") {
-                protectCall(options.error, "options.error", InAppPurchase.prototype.ERR_PURCHASE, "Trying to purchase a unknown product.", productId, quantity);
-            }
-            return;
         }
-        var purchaseOk = function() {
-            log("Purchased " + productId);
-            if (typeof options.purchaseEnqueued === "function") {
-                protectCall(options.purchaseEnqueued, "options.purchaseEnqueued", productId, quantity);
+        var hasSKUs = false;
+        if (typeof skus !== "undefined") {
+            if (typeof skus === "string") {
+                skus = [ skus ];
             }
-        };
-        var purchaseFailed = function() {
-            var errmsg = "Purchasing " + productId + " failed";
-            log(errmsg);
-            if (typeof options.error === "function") {
-                protectCall(options.error, "options.error", InAppPurchase.prototype.ERR_PURCHASE, errmsg, productId, quantity);
+            if (skus.length > 0) {
+                if (typeof skus[0] !== "string") {
+                    var msg = "invalid productIds: " + JSON.stringify(skus);
+                    if (this.options.showLog) {
+                        log(msg);
+                    }
+                    fail(msg, store.ERR_INVALID_PRODUCT_ID);
+                    return;
+                }
+                if (this.options.showLog) {
+                    log("load " + JSON.stringify(skus));
+                }
+                hasSKUs = true;
             }
-        };
-        exec("purchase", [ productId, quantity ], purchaseOk, purchaseFailed);
-    };
-    InAppPurchase.prototype.canMakePayments = function(success, error) {
-        return exec("canMakePayments", [], success, error);
-    };
-    InAppPurchase.prototype.restore = function() {
-        this.needRestoreNotification = true;
-        exec("restoreCompletedTransactions", []);
-    };
-    InAppPurchase.prototype.load = function(productIds, success, error) {
-        var options = this.options;
-        if (typeof productIds === "string") {
-            productIds = [ productIds ];
         }
-        if (!productIds) {
-            protectCall(success, "load.success", [], []);
-        } else if (!productIds.length) {
-            protectCall(success, "load.success", [], []);
+        if (hasSKUs) {
+            cordova.exec(success, errorCb(fail), "InAppBillingPlugin", "init", [ skus ]);
         } else {
-            if (typeof productIds[0] !== "string") {
-                var msg = "invalid productIds given to store.load: " + JSON.stringify(productIds);
+            cordova.exec(success, errorCb(fail), "InAppBillingPlugin", "init", []);
+        }
+    };
+    InAppBilling.prototype.getPurchases = function(success, fail) {
+        if (this.options.showLog) {
+            log("getPurchases called!");
+        }
+        return cordova.exec(success, errorCb(fail), "InAppBillingPlugin", "getPurchases", [ "null" ]);
+    };
+    InAppBilling.prototype.buy = function(success, fail, productId) {
+        if (this.options.showLog) {
+            log("buy called!");
+        }
+        return cordova.exec(success, errorCb(fail), "InAppBillingPlugin", "buy", [ productId ]);
+    };
+    InAppBilling.prototype.subscribe = function(success, fail, productId) {
+        if (this.options.showLog) {
+            log("subscribe called!");
+        }
+        return cordova.exec(success, errorCb(fail), "InAppBillingPlugin", "subscribe", [ productId ]);
+    };
+    InAppBilling.prototype.consumePurchase = function(success, fail, productId) {
+        if (this.options.showLog) {
+            log("consumePurchase called!");
+        }
+        return cordova.exec(success, errorCb(fail), "InAppBillingPlugin", "consumePurchase", [ productId ]);
+    };
+    InAppBilling.prototype.getAvailableProducts = function(success, fail) {
+        if (this.options.showLog) {
+            log("getAvailableProducts called!");
+        }
+        return cordova.exec(success, errorCb(fail), "InAppBillingPlugin", "getAvailableProducts", [ "null" ]);
+    };
+    InAppBilling.prototype.getProductDetails = function(success, fail, skus) {
+        if (this.options.showLog) {
+            log("getProductDetails called!");
+        }
+        if (typeof skus === "string") {
+            skus = [ skus ];
+        }
+        if (!skus.length) {
+            return;
+        } else {
+            if (typeof skus[0] !== "string") {
+                var msg = "invalid productIds: " + JSON.stringify(skus);
                 log(msg);
-                protectCall(options.error, "options.error", InAppPurchase.prototype.ERR_LOAD, msg);
-                protectCall(error, "load.error", InAppPurchase.prototype.ERR_LOAD, msg);
+                fail(msg, store.ERR_INVALID_PRODUCT_ID);
                 return;
             }
-            log("load " + JSON.stringify(productIds));
-            var loadOk = function(array) {
-                var valid = array[0];
-                var invalid = array[1];
-                log("load ok: { valid:" + JSON.stringify(valid) + " invalid:" + JSON.stringify(invalid) + " }");
-                protectCall(success, "load.success", valid, invalid);
-            };
-            var loadFailed = function(errMessage) {
-                log("load failed");
-                log(errMessage);
-                var message = "Load failed: " + errMessage;
-                protectCall(options.error, "options.error", InAppPurchase.prototype.ERR_LOAD, message);
-                protectCall(error, "load.error", InAppPurchase.prototype.ERR_LOAD, message);
-            };
-            InAppPurchase._productIds = productIds;
-            exec("load", [ productIds ], loadOk, loadFailed);
-        }
-    };
-    InAppPurchase.prototype.finish = function(transactionId) {
-        exec("finishTransaction", [ transactionId ], noop, noop);
-    };
-    var pendingUpdates = [];
-    InAppPurchase.prototype.processPendingUpdates = function() {
-        for (var i = 0; i < pendingUpdates.length; ++i) {
-            this.updatedTransactionCallback.apply(this, pendingUpdates[i]);
-        }
-        pendingUpdates = [];
-    };
-    InAppPurchase.prototype.updatedTransactionCallback = function(state, errorCode, errorText, transactionIdentifier, productId, transactionReceipt) {
-        if (!initialized) {
-            var args = Array.prototype.slice.call(arguments);
-            pendingUpdates.push(args);
-            return;
-        }
-        if (transactionReceipt) {
-            this.receiptForProduct[productId] = transactionReceipt;
-            this.receiptForTransaction[transactionIdentifier] = transactionReceipt;
-            if (window.localStorage) {
-                window.localStorage.sk_receiptForProduct = JSON.stringify(this.receiptForProduct);
-                window.localStorage.sk_receiptForTransaction = JSON.stringify(this.receiptForTransaction);
+            if (this.options.showLog) {
+                log("load " + JSON.stringify(skus));
             }
-        }
-        switch (state) {
-          case "PaymentTransactionStatePurchasing":
-            protectCall(this.options.purchasing, "options.purchasing", productId);
-            return;
-
-          case "PaymentTransactionStatePurchased":
-            protectCall(this.options.purchase, "options.purchase", transactionIdentifier, productId);
-            return;
-
-          case "PaymentTransactionStateFailed":
-            protectCall(this.options.error, "options.error", errorCode, errorText, {
-                productId: productId
-            });
-            return;
-
-          case "PaymentTransactionStateRestored":
-            protectCall(this.options.restore, "options.restore", transactionIdentifier, productId);
-            return;
-
-          case "PaymentTransactionStateFinished":
-            protectCall(this.options.finish, "options.finish", transactionIdentifier, productId);
-            return;
+            cordova.exec(success, errorCb(fail), "InAppBillingPlugin", "getProductDetails", [ skus ]);
         }
     };
-    InAppPurchase.prototype.restoreCompletedTransactionsFinished = function() {
-        if (this.needRestoreNotification) delete this.needRestoreNotification; else return;
-        protectCall(this.options.restoreCompleted, "options.restoreCompleted");
-    };
-    InAppPurchase.prototype.restoreCompletedTransactionsFailed = function(errorCode) {
-        if (this.needRestoreNotification) delete this.needRestoreNotification; else return;
-        protectCall(this.options.restoreFailed, "options.restoreFailed", errorCode);
-    };
-    InAppPurchase.prototype.refreshReceipts = function(successCb, errorCb) {
-        var that = this;
-        var loaded = function(args) {
-            var base64 = args[0];
-            var bundleIdentifier = args[1];
-            var bundleShortVersion = args[2];
-            var bundleNumericVersion = args[3];
-            var bundleSignature = args[4];
-            log("infoPlist: " + bundleIdentifier + "," + bundleShortVersion + "," + bundleNumericVersion + "," + bundleSignature);
-            that.setAppStoreReceipt(base64);
-            protectCall(that.options.receiptsRefreshed, "options.receiptsRefreshed", {
-                appStoreReceipt: base64,
-                bundleIdentifier: bundleIdentifier,
-                bundleShortVersion: bundleShortVersion,
-                bundleNumericVersion: bundleNumericVersion,
-                bundleSignature: bundleSignature
-            });
-            protectCall(successCb, "refreshReceipts.success", base64);
+    function errorCb(fail) {
+        return function(error) {
+            if (!fail) return;
+            var tokens = typeof error === "string" ? error.split("|") : [ error ];
+            if (tokens.length > 1 && /^[-+]?(\d+)$/.test(tokens[0])) {
+                var code = tokens[0];
+                var message = tokens[1];
+                fail(message, +code);
+            } else {
+                fail(error);
+            }
         };
-        var error = function(errMessage) {
-            log("refresh receipt failed: " + errMessage);
-            protectCall(that.options.error, "options.error", InAppPurchase.prototype.ERR_REFRESH_RECEIPTS, "Failed to refresh receipt: " + errMessage);
-            protectCall(errorCb, "refreshReceipts.error", InAppPurchase.prototype.ERR_REFRESH_RECEIPTS, "Failed to refresh receipt: " + errMessage);
-        };
-        log("refreshing appStoreReceipt");
-        exec("appStoreRefreshReceipt", [], loaded, error);
-    };
-    InAppPurchase.prototype.loadReceipts = function(callback) {
-        var that = this;
-        var loaded = function(base64) {
-            that.setAppStoreReceipt(base64);
-            callCallback();
-        };
-        var error = function(errMessage) {
-            log("load failed: " + errMessage);
-            protectCall(that.options.error, "options.error", InAppPurchase.prototype.ERR_LOAD_RECEIPTS, "Failed to load receipt: " + errMessage);
-        };
-        function callCallback() {
-            protectCall(callback, "loadReceipts.callback", {
-                appStoreReceipt: that.appStoreReceipt,
-                forTransaction: function(transactionId) {
-                    return that.receiptForTransaction[transactionId] || null;
-                },
-                forProduct: function(productId) {
-                    return that.receiptForProduct[productId] || null;
-                }
-            });
-        }
-        if (that.appStoreReceipt) {
-            log("appStoreReceipt already loaded:");
-            log(that.appStoreReceipt);
-            callCallback();
-        } else {
-            log("loading appStoreReceipt");
-            exec("appStoreReceipt", [], loaded, error);
-        }
-    };
-    InAppPurchase.prototype.setAppStoreReceipt = function(base64) {
-        this.appStoreReceipt = base64;
-        if (window.localStorage && base64) {
-            window.localStorage.sk_appStoreReceipt = base64;
-        }
-    };
-    InAppPurchase.prototype.loadAppStoreReceipt = function() {
-        if (window.localStorage && window.localStorage.sk_appStoreReceipt) {
-            this.appStoreReceipt = window.localStorage.sk_appStoreReceipt;
-        }
-        if (this.appStoreReceipt === "null") this.appStoreReceipt = null;
-    };
-    InAppPurchase.prototype.runQueue = function() {
-        if (!this.eventQueue.length || !this.onPurchased && !this.onFailed && !this.onRestored) {
-            return;
-        }
-        var args;
-        var queue = this.eventQueue.slice();
-        this.eventQueue = [];
-        args = queue.shift();
-        while (args) {
-            this.updatedTransactionCallback.apply(this, args);
-            args = queue.shift();
-        }
-        if (!this.eventQueue.length) {
-            this.unWatchQueue();
-        }
-    };
-    InAppPurchase.prototype.watchQueue = function() {
-        if (this.timer) {
-            return;
-        }
-        this.timer = window.setInterval(function() {
-            window.storekit.runQueue();
-        }, 1e4);
-    };
-    InAppPurchase.prototype.unWatchQueue = function() {
-        if (this.timer) {
-            window.clearInterval(this.timer);
-            this.timer = null;
-        }
-    };
-    InAppPurchase.prototype.eventQueue = [];
-    InAppPurchase.prototype.timer = null;
-    window.storekit = new InAppPurchase();
+    }
+    window.inappbilling = new InAppBilling();
+    try {
+        store.android = window.inappbilling;
+    } catch (e) {}
 })();
 
 (function() {
     "use strict";
+    var initialized = false;
+    var skus = [];
     store.when("refreshed", function() {
-        storekitInit();
-        storekitLoad();
+        if (!initialized) init();
     });
+    store.when("re-refreshed", function() {
+        iabGetPurchases();
+    });
+    function init() {
+        if (initialized) return;
+        initialized = true;
+        for (var i = 0; i < store.products.length; ++i) skus.push(store.products[i].id);
+        store.android.init(iabReady, function(err) {
+            store.error({
+                code: store.ERR_SETUP,
+                message: "Init failed - " + err
+            });
+        }, {
+            showLog: store.verbosity >= store.DEBUG ? true : false
+        }, skus);
+    }
+    function iabReady() {
+        store.log.debug("android -> ready");
+        store.android.getAvailableProducts(iabLoaded, function(err) {
+            store.error({
+                code: store.ERR_LOAD,
+                message: "Loading product info failed - " + err
+            });
+        });
+    }
+    function iabLoaded(validProducts) {
+        store.log.debug("android -> loaded - " + JSON.stringify(validProducts));
+        var p, i;
+        for (i = 0; i < validProducts.length; ++i) {
+            if (validProducts[i].productId) p = store.products.byId[validProducts[i].productId]; else p = null;
+            if (p) {
+                p.set({
+                    title: validProducts[i].title,
+                    price: validProducts[i].price,
+                    description: validProducts[i].description,
+                    currency: validProducts[i].price_currency_code,
+                    state: store.VALID
+                });
+                p.trigger("loaded");
+            }
+        }
+        for (i = 0; i < skus.length; ++i) {
+            p = store.products.byId[skus[i]];
+            if (p && !p.valid) {
+                p.set("state", store.INVALID);
+                p.trigger("loaded");
+            }
+        }
+        iabGetPurchases();
+    }
+    function iabGetPurchases() {
+        store.android.getPurchases(function(purchases) {
+            if (purchases && purchases.length) {
+                for (var i = 0; i < purchases.length; ++i) {
+                    var purchase = purchases[i];
+                    var p = store.get(purchase.productId);
+                    if (!p) {
+                        store.log.warn("android -> user owns a non-registered product");
+                        continue;
+                    }
+                    setProductData(p, purchase);
+                }
+            }
+            store.ready(true);
+        }, function() {});
+    }
+    function setProductData(product, data) {
+        store.log.debug("android -> product data for " + product.id);
+        store.log.debug(data);
+        product.transaction = {
+            type: "android-playstore",
+            id: data.orderId,
+            purchaseToken: data.purchaseToken,
+            developerPayload: data.developerPayload,
+            receipt: data.receipt,
+            signature: data.signature
+        };
+        if (product.state !== store.OWNED && product.state !== store.FINISHED && product.state !== store.APPROVED) {
+            if (data.purchaseState === 0) {
+                product.set("state", store.APPROVED);
+            }
+        }
+        if (product.state === store.OWNED || product.state === store.FINISHED || product.state === store.APPROVED) {
+            if (data.purchaseState === 1) {
+                product.trigger("cancelled");
+                product.set("state", store.VALID);
+            } else if (data.purchaseState === 2) {
+                product.trigger("refunded");
+                product.set("state", store.VALID);
+            }
+        }
+    }
     store.when("requested", function(product) {
         store.ready(function() {
             if (!product) {
@@ -1045,301 +949,50 @@ store.verbosity = 0;
                 }), product ]);
                 return;
             }
-            storekit.purchase(product.id, 1);
-        });
-    });
-    store.when("finished", function(product) {
-        store.log.debug("ios -> finishing " + product.id);
-        storekitFinish(product);
-        if (product.type === store.CONSUMABLE) product.set("state", store.VALID); else product.set("state", store.OWNED);
-    });
-    function storekitFinish(product) {
-        if (product.type === store.CONSUMABLE) {
-            if (product.transaction.id) storekit.finish(product.transaction.id);
-        } else if (product.transactions) {
-            store.log.debug("ios -> finishing all " + product.transactions.length + " transactions for " + product.id);
-            for (var i = 0; i < product.transactions.length; ++i) {
-                store.log.debug("ios -> finishing " + product.transactions[i]);
-                storekit.finish(product.transactions[i]);
+            product.set("state", store.INITIATED);
+            var method = "subscribe";
+            if (product.type === store.NON_CONSUMABLE || product.type === store.CONSUMABLE) {
+                method = "buy";
             }
-            product.transactions = [];
-        }
-    }
-    store.when("owned", function(product) {
-        if (!isOwned(product.id)) setOwned(product.id, true);
-    });
-    store.when("registered", function(product) {
-        var owned = isOwned(product.id);
-        product.owned = product.owned || owned;
-        store.log.debug("ios -> product " + product.id + " registered" + (owned ? " and owned" : ""));
-    });
-    store.when("expired", function(product) {
-        store.log.debug("ios -> product " + product.id + " expired");
-        product.owned = false;
-        setOwned(product.id, false);
-        storekitFinish(product);
-        if (product.state === store.OWNED || product.state === store.APPROVED) product.set("state", store.VALID);
-    });
-    var initialized = false;
-    var initializing = false;
-    function storekitInit() {
-        if (initialized || initializing) return;
-        initializing = true;
-        store.log.debug("ios -> initializing storekit");
-        storekit.init({
-            debug: store.verbosity >= store.DEBUG ? true : false,
-            noAutoFinish: true,
-            error: storekitError,
-            purchase: storekitPurchased,
-            purchasing: storekitPurchasing,
-            restore: storekitRestored,
-            restoreCompleted: storekitRestoreCompleted,
-            restoreFailed: storekitRestoreFailed
-        }, storekitReady, storekitInitFailed);
-    }
-    function storekitReady() {
-        store.log.info("ios -> storekit ready");
-        initializing = false;
-        initialized = true;
-        storekitLoad();
-    }
-    function storekitInitFailed() {
-        store.log.warn("ios -> storekit init failed");
-        initializing = false;
-        retry(storekitInit);
-    }
-    var loaded = false;
-    var loading = false;
-    function storekitLoad() {
-        if (!initialized) return;
-        if (loaded || loading) return;
-        loading = true;
-        var products = [];
-        for (var i = 0; i < store.products.length; ++i) products.push(store.products[i].id);
-        store.log.debug("ios -> loading products");
-        storekit.load(products, storekitLoaded, storekitLoadFailed);
-    }
-    function storekitLoaded(validProducts, invalidProductIds) {
-        store.log.debug("ios -> products loaded");
-        var p;
-        for (var i = 0; i < validProducts.length; ++i) {
-            p = store.products.byId[validProducts[i].id];
-            store.log.debug("ios -> product " + p.id + " is valid (" + p.alias + ")");
-            store.log.debug("ios -> owned? " + p.owned);
-            p.set({
-                title: validProducts[i].title,
-                price: validProducts[i].price,
-                description: validProducts[i].description,
-                state: store.VALID
-            });
-            p.trigger("loaded");
-            if (isOwned(p.id)) {
-                if (p.type === store.NON_CONSUMABLE) p.set("state", store.OWNED); else p.set("state", store.APPROVED);
-            }
-        }
-        for (var j = 0; j < invalidProductIds.length; ++j) {
-            p = store.products.byId[invalidProductIds[j]];
-            p.set("state", store.INVALID);
-            store.log.warn("ios -> product " + p.id + " is NOT valid (" + p.alias + ")");
-            p.trigger("loaded");
-        }
-        setTimeout(function() {
-            loading = false;
-            loaded = true;
-            store.ready(true);
-        }, 1);
-    }
-    function storekitLoadFailed() {
-        store.log.warn("ios -> loading products failed");
-        loading = false;
-        retry(storekitLoad);
-    }
-    var refreshCallbacks = [];
-    var refreshing = false;
-    function storekitRefreshReceipts(callback) {
-        if (callback) refreshCallbacks.push(callback);
-        if (refreshing) return;
-        refreshing = true;
-        function callCallbacks() {
-            var callbacks = refreshCallbacks;
-            refreshCallbacks = [];
-            for (var i = 0; i < callbacks.length; ++i) callbacks[i]();
-        }
-        storekit.refreshReceipts(function() {
-            refreshing = false;
-            callCallbacks();
-        }, function() {
-            refreshing = false;
-            callCallbacks();
-        });
-    }
-    store.when("expired", function() {
-        storekitRefreshReceipts();
-    });
-    function storekitPurchasing(productId) {
-        store.log.debug("ios -> is purchasing " + productId);
-        store.ready(function() {
-            var product = store.get(productId);
-            if (!product) {
-                store.log.warn("ios -> Product '" + productId + "' is being purchased. But isn't registered anymore! How come?");
-                return;
-            }
-            if (product.state !== store.INITIATED) product.set("state", store.INITIATED);
-        });
-    }
-    function storekitPurchased(transactionId, productId) {
-        store.ready(function() {
-            var product = store.get(productId);
-            if (!product) {
-                store.error({
-                    code: store.ERR_PURCHASE,
-                    message: "Unknown product purchased"
-                });
-                return;
-            }
-            if (product.transactions) {
-                for (var i = 0; i < product.transactions.length; ++i) {
-                    if (transactionId === product.transactions[i]) return;
-                }
-            }
-            product.transaction = {
-                type: "ios-appstore",
-                id: transactionId
-            };
-            if (!product.transactions) product.transactions = [];
-            product.transactions.push(transactionId);
-            store.log.info("ios -> transaction " + transactionId + " purchased (" + product.transactions.length + " in the queue for " + productId + ")");
-            product.set("state", store.APPROVED);
-        });
-    }
-    function storekitError(errorCode, errorText, options) {
-        var i, p;
-        if (!options) options = {};
-        store.log.error("ios -> ERROR " + errorCode + ": " + errorText + " - " + JSON.stringify(options));
-        if (errorCode === storekit.ERR_LOAD) {
-            for (i = 0; i < store.products.length; ++i) {
-                p = store.products[i];
-                p.trigger("error", [ new store.Error({
-                    code: store.ERR_LOAD,
-                    message: errorText
-                }), p ]);
-            }
-        }
-        if (errorCode === storekit.ERR_PAYMENT_CANCELLED) {
-            p = store.get(options.productId);
-            if (p) {
-                p.trigger("cancelled");
-                p.set({
-                    transaction: null,
-                    state: store.VALID
-                });
-            }
-            return;
-        }
-        store.error({
-            code: errorCode,
-            message: errorText
-        });
-    }
-    store.when("re-refreshed", function() {
-        storekit.restore();
-        storekit.refreshReceipts(function(data) {
-            if (data) {
-                var p = data.bundleIdentifier ? store.get(data.bundleIdentifier) : null;
-                if (!p) {
-                    p = new store.Product({
-                        id: data.bundleIdentifier || "application data",
-                        alias: "application data",
-                        type: store.NON_CONSUMABLE
+            store.android[method](function(data) {
+                setProductData(product, data);
+            }, function(err, code) {
+                store.log.info("android -> " + method + " error " + code);
+                if (code === store.ERR_PAYMENT_CANCELLED) {
+                    product.transaction = null;
+                    product.trigger("cancelled");
+                } else {
+                    store.error({
+                        code: code || store.ERR_PURCHASE,
+                        message: "Purchase failed: " + err
                     });
-                    store.register(p);
                 }
-                p.version = data.bundleShortVersion;
-                p.transaction = {
-                    type: "ios-appstore",
-                    appStoreReceipt: data.appStoreReceipt,
-                    signature: data.signature
-                };
-                p.trigger("loaded");
-                p.set("state", store.APPROVED);
-            }
+                product.set("state", store.VALID);
+            }, product.id);
         });
     });
-    function storekitRestored(originalTransactionId, productId) {
-        store.log.info("ios -> restored purchase " + productId);
-        storekitPurchased(originalTransactionId, productId);
-    }
-    function storekitRestoreCompleted() {
-        store.log.info("ios -> restore completed");
-    }
-    function storekitRestoreFailed() {
-        store.log.warn("ios -> restore failed");
-        store.error({
-            code: store.ERR_REFRESH,
-            message: "Failed to restore purchases during refresh"
-        });
-    }
-    store._refreshForValidation = function(callback) {
-        storekitRefreshReceipts(callback);
-    };
-    store._prepareForValidation = function(product, callback) {
-        var nRetry = 0;
-        function loadReceipts() {
-            storekit.loadReceipts(function(r) {
-                if (!product.transaction) {
-                    product.transaction = {
-                        type: "ios-appstore"
-                    };
-                }
-                product.transaction.appStoreReceipt = r.appStoreReceipt;
-                if (product.transaction.id) product.transaction.transactionReceipt = r.forTransaction(product.transaction.id);
-                if (!product.transaction.appStoreReceipt && !product.transaction.transactionReceipt) {
-                    nRetry++;
-                    if (nRetry < 2) {
-                        setTimeout(loadReceipts, 500);
-                        return;
-                    } else if (nRetry === 2) {
-                        storekit.refreshReceipts(loadReceipts);
-                        return;
-                    }
-                }
-                callback();
-            });
+    store.when("product", "finished", function(product) {
+        store.log.debug("android -> consumable finished");
+        if (product.type === store.CONSUMABLE) {
+            product.transaction = null;
+            store.android.consumePurchase(function() {
+                store.log.debug("android -> consumable consumed");
+                product.set("state", store.VALID);
+            }, function(err, code) {
+                store.error({
+                    code: code || store.ERR_UNKNOWN,
+                    message: err
+                });
+            }, product.id);
+        } else {
+            product.set("state", store.OWNED);
         }
-        loadReceipts();
-    };
-    function isOwned(productId) {
-        return localStorage["__cc_fovea_store_ios_owned_ " + productId] === "1";
-    }
-    function setOwned(productId, value) {
-        localStorage["__cc_fovea_store_ios_owned_ " + productId] = value ? "1" : "0";
-    }
-    var retryTimeout = 5e3;
-    var retries = [];
-    function retry(fn) {
-        var tid = setTimeout(function() {
-            retries = retries.filter(function(o) {
-                return tid !== o.tid;
-            });
-            fn();
-        }, retryTimeout);
-        retries.push({
-            tid: tid,
-            fn: fn
-        });
-        retryTimeout *= 2;
-        if (retryTimeout > 12e4) retryTimeout = 12e4;
-    }
-    document.addEventListener("online", function() {
-        var a = retries;
-        retries = [];
-        retryTimeout = 5e3;
-        for (var i = 0; i < a.length; ++i) {
-            clearTimeout(a[i].tid);
-            a[i].fn.call(this);
-        }
-    }, false);
+    });
 })();
+
+if (window) {
+    window.store = store;
+}
 
 module.exports = store;
 });

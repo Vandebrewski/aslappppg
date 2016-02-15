@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android   = "http://schemas.android.com/apk/res/android"
         id        = "com.basvanderwilk.aslkids"
         versionCode = "10"
-        version   = "1.6.0">
+        version   = "1.3.0">
 
     <name>ASL Kids</name>
 
@@ -25,7 +24,7 @@
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
 
 	
-<!-->	<gap:plugin name="cc.fovea.cordova.purchase" source="npm" version="3.11.0" /> -->
+	<gap:plugin name="cc.fovea.cordova.purchase" source="npm" version="3.11.0" />
 
 
 <!-- added this for Android, not sure it needs it 

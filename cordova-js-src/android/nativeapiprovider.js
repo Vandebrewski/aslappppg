@@ -1,5 +1,4 @@
-cordova.define("org.apache.cordova.file.iosFileSystem", function(require, exports, module) { /*
- *
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,17 +15,22 @@ cordova.define("org.apache.cordova.file.iosFileSystem", function(require, export
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- *
 */
 
-FILESYSTEM_PROTOCOL = "cdvfile";
+/**
+ * Exports the ExposedJsApi.java object if available, otherwise exports the PromptBasedNativeApi.
+ */
+
+var nativeApi = this._cordovaNative || require('cordova/android/promptbasednativeapi');
+var currentApi = nativeApi;
 
 module.exports = {
-    __format__: function(fullPath) {
-        var path = ('/'+this.name+(fullPath[0]==='/'?'':'/')+encodeURI(fullPath)).replace('//','/');
-        return FILESYSTEM_PROTOCOL + '://localhost' + path;
+    get: function() { return currentApi; },
+    setPreferPrompt: function(value) {
+        currentApi = value ? require('cordova/android/promptbasednativeapi') : nativeApi;
+    },
+    // Used only by tests.
+    set: function(value) {
+        currentApi = value;
     }
 };
-
-
-});
