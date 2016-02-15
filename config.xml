@@ -19,7 +19,7 @@
        Bas van der Wilk
     </author>
 
-	<gap:platform name="ios" />
+	<gap:platform name="android" />
 <!--	<gap:platform name="android" /> -->
 
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
