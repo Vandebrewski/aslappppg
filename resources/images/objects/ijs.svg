@@ -1,0 +1,70 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 768 430" enable-background="new 0 0 768 430" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<polygon fill="#E7F4F5" points="601.904,331 623.277,295 623.232,273.619 601.904,273.026 			"/>
+			<polygon opacity="0.6" fill="#007EAC" points="165.669,275.826 148,285.584 176.977,330.318 245.771,338.211 253.666,356.256 
+				376.599,387.271 501.221,366.405 532.236,342.159 607.234,342.723 629.012,297.742 574.717,258.468 			"/>
+			<polygon opacity="0.6" fill="#007EAC" points="165.669,275.826 155.545,281.82 182.051,320.167 248.592,334.828 253.104,347.798 
+				376.034,380.505 499.529,355.691 529.418,334.263 602.158,335.955 629.012,297.742 574.717,258.468 			"/>
+			<polygon fill="#E7F4F5" points="158.621,260.695 158.621,282.03 183.432,317.556 251.101,332.219 253.355,344.623 
+				377.417,375.638 496.398,352.519 529.107,329.963 601.852,331.09 623.277,295 623.232,273.619 			"/>
+			<polygon fill="#E7F4F5" points="623.232,273.619 601.287,273.008 601.852,331.09 623.277,295 			"/>
+			<polygon fill="#E7F4F5" points="183.942,261.4 158.621,260.695 158.621,282.03 183.432,317.556 183.942,317.667 			"/>
+			<path fill="#E7F4F5" d="M180.807,275.143c-5.504,5.112-10.725,10.49-15.854,15.953l18.48,26.46l0.51,0.111v-45.374
+				C182.899,273.243,181.844,274.181,180.807,275.143z"/>
+			<polygon fill="#E7F4F5" points="377.079,266.771 253.974,263.349 253.974,344.777 377.079,375.555 			"/>
+			<polygon fill="#E7F4F5" points="333.203,265.55 333.203,364.584 377.079,375.555 377.079,266.771 			"/>
+			<polygon fill="#E7F4F5" points="527.979,267.933 499.836,270.185 499.836,350.146 529.107,330.241 			"/>
+			<polygon fill="#F3F9F6" points="224.032,238.044 158.621,260.602 183.432,296.127 251.101,310.788 253.355,323.195 
+				377.417,354.207 496.398,331.09 529.107,308.533 601.852,309.659 623.277,273.571 570.271,235.227 472.152,222.255 367.263,220 
+							"/>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="162.844" y="224.512" width="409.685" height="62.601">
+					<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+					<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="162.844" y="224.512" width="409.685" height="62.601" id="SVGID_1_">
+				<g filter="url(#Adobe_OpacityMaskFilter)">
+					<defs>
+						
+							<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="162.844" y="224.512" width="409.685" height="62.601">
+							<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
+					<mask maskUnits="userSpaceOnUse" x="162.844" y="224.512" width="409.685" height="62.601" id="SVGID_1_">
+						<g filter="url(#Adobe_OpacityMaskFilter_1_)">
+						</g>
+					</mask>
+					<radialGradient id="SVGID_2_" cx="326.2256" cy="239.0312" r="166.5541" gradientUnits="userSpaceOnUse">
+						<stop  offset="0.0022" style="stop-color:#FFFFFF"/>
+						<stop  offset="0.1645" style="stop-color:#FCFCFC"/>
+						<stop  offset="0.2947" style="stop-color:#F2F2F2"/>
+						<stop  offset="0.4138" style="stop-color:#E1E1E1"/>
+						<stop  offset="0.5262" style="stop-color:#C9C9C9"/>
+						<stop  offset="0.6341" style="stop-color:#AAAAAA"/>
+						<stop  offset="0.7384" style="stop-color:#858585"/>
+						<stop  offset="0.8401" style="stop-color:#585858"/>
+						<stop  offset="0.937" style="stop-color:#252525"/>
+						<stop  offset="1" style="stop-color:#000000"/>
+					</radialGradient>
+					<path mask="url(#SVGID_1_)" fill="url(#SVGID_2_)" d="M572.529,239.736l-98.123-12.969l-104.886-2.256l-143.23,18.044
+						l-63.445,21.879c17.304,4.699,104.764,24.875,154.231,22.481C440.945,280.928,572.529,239.736,572.529,239.736z"/>
+				</g>
+			</mask>
+			<radialGradient id="SVGID_3_" cx="326.2256" cy="239.0312" r="166.5541" gradientUnits="userSpaceOnUse">
+				<stop  offset="0.0022" style="stop-color:#FFFFFF"/>
+				<stop  offset="0.9102" style="stop-color:#FFFFFF"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</radialGradient>
+			<path fill="url(#SVGID_3_)" d="M572.529,239.736l-98.123-12.969l-104.886-2.256l-143.23,18.044l-63.445,21.879
+				c17.304,4.699,104.764,24.875,154.231,22.481C440.945,280.928,572.529,239.736,572.529,239.736z"/>
+			<polygon fill="#FFFFFF" points="253.355,323.195 377.417,354.207 253.355,327.427 			"/>
+			<polygon fill="#FFFFFF" points="529.107,308.533 601.852,309.659 529.107,314.172 			"/>
+			<polygon fill="#FFFFFF" points="183.432,296.127 251.101,310.788 184.37,299.321 			"/>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        xmlns:android   = "http://schemas.android.com/apk/res/android"
         id        = "com.basvanderwilk.aslkids"
         versionCode = "10"
-        version   = "1.6.0">
+        version   = "1.4.0">
 
     <name>ASL Kids</name>
 
     <description>
-       Learn ASL in a fun way
+       Baby sign language and Sign Language for kids and beginners 
     </description>
 
     <author href="http://asl-kids.com" email="info@asl-kids.com">
        Bas van der Wilk
     </author>
 
-	<gap:platform name="android" />
+	<gap:platform name="ios" />
 <!--	<gap:platform name="android" /> -->
 
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
 
 	
-<!-->	<gap:plugin name="cc.fovea.cordova.purchase" source="npm" version="3.11.0" /> -->
+	<gap:plugin name="cc.fovea.cordova.purchase" source="npm" version="3.11.0" />
 
 
 <!-- added this for Android, not sure it needs it 
@@ -43,7 +41,7 @@ permission on your app, which PhoneGap requires.
 <!-- <preference name="permissions" value="none"/> -->
 
 <!-- Customize your app and platform with the preference element. -->
-<preference name='phonegap-version' value='cli-5.2.0' />
+<preference name='phonegap-version' value='cli-6.5.0' />
 
 <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device" value="universal" /> <!-- all: possible values handset, tablet, or universal -->
@@ -57,6 +55,7 @@ permission on your app, which PhoneGap requires.
 
 
 <preference name="AllowInlineMediaPlayback" value="true" />
+
 
 <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 <gap:plugin name="org.apache.cordova.splashscreen" />
