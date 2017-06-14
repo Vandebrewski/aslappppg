@@ -1,4 +1,21 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 13.5 768 975" enable-background="new 0 13.5 768 975" xml:space="preserve">
+<refs><style>
+	#background {
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	}
+	
+	#stars path, #stars {
+	opacity: 0;
+	-webkit-animation: fadein 4s 2s forwards;
+	-moz-animation: fadein 4s 2s forwards;
+	}
+		
+	@-moz-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}		
+	@-webkit-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
+	}
+	
+</style></refs>
 <g id="background">
 	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="384.0005" y1="988.5" x2="384.0005" y2="13.5005">
 		<stop  offset="0" style="stop-color:#65BCAB"/>

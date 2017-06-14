@@ -1,4 +1,20 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 768 432" enable-background="new 0 0 768 432" xml:space="preserve">
+<refs><style>
+	#pinkcircle {
+	-webkit-transform-origin: 50% 50%;
+	-webkit-animation: spin 0.5s 1 linear;
+	}	
+	#lefthand, #righthand {
+	opacity: 0;
+	-webkit-animation: fadein 0.5s 0.5s forwards;
+	}
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg);}
+100% { -webkit-transform: rotate(360deg);}
+}
+	@-webkit-keyframes fadein {0% { opacity: 0;}100% { opacity: 1}}	
+	</style></refs>	
+
 <g id="lefthand">
 	<g id="Layer_13_copy">
 		<path fill="#409D8B" d="M382.999,208.312c-80.812-32.24-102.578-31.257-113-37.922c-2.361-1.503-2.822-12.213-8.244-15.522
