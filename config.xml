@@ -5,7 +5,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.basvanderwilk.aslkids"
         versionCode = "10"
-        version   = "1.4.0">
+        version   = "2.0">
 
     <name>ASL Kids</name>
 
