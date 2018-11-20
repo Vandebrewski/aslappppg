@@ -42,7 +42,7 @@ permission on your app, which PhoneGap requires.
 <!-- <preference name="permissions" value="none"/> -->
 
 <!-- Customize your app and platform with the preference element. -->
-<preference name='phonegap-version' value='cli-6.0.0' />
+<preference name='phonegap-version' value='cli-6.5.0' />
 
 <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device" value="universal" /> <!-- all: possible values handset, tablet, or universal -->
@@ -66,7 +66,8 @@ permission on your app, which PhoneGap requires.
 
 <!-- statusbar plugin en settings -->
 <!-- <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" /> -->
-<preference name="StatusBarOverlaysWebView" value="true" />
+<preference name="StatusBarOverlaysWebView" value="false" />
+    
 <preference name="StatusBarBackgroundColor" value="#65bcab" />
 <preference name="StatusBarStyle" value="lightcontent" />
 
