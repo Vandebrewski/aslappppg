@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.basvanderwilk.aslkids"
-        versionCode = "10"
+        versionCode = "20"
         version   = "2.0">
 
     <name>ASL Kids</name>
@@ -42,7 +42,7 @@ permission on your app, which PhoneGap requires.
 <!-- <preference name="permissions" value="none"/> -->
 
 <!-- Customize your app and platform with the preference element. -->
-<preference name='phonegap-version' value='cli-6.5.0' />
+<preference name='phonegap-version' value='cli-6.0.0' />
 
 <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device" value="universal" /> <!-- all: possible values handset, tablet, or universal -->
