@@ -54,6 +54,19 @@ permission on your app, which PhoneGap requires.
 <preference name="exit-on-suspend" value="true" /> <!-- ios: if set to true, app will terminate when home button is pressed -->
 <preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
 
+    
+<edit-config target="StatusBarOverlaysWebView" file="*-Info.plist" mode="overwrite" platform="ios">
+<false/>
+</edit-config>
+
+<edit-config target="StatusBarBackgroundColor" file="*-Info.plist" mode="overwrite" platform="ios">
+<string>#1c375f</string>
+</edit-config> 
+
+<edit-config target="StatusBarStyle" file="*-Info.plist" mode="overwrite" platform="ios">
+<string>lightcontent</string>
+</edit-config>
+    
 
 <preference name="AllowInlineMediaPlayback" value="true" />
 
@@ -66,6 +79,7 @@ permission on your app, which PhoneGap requires.
 
 <!-- statusbar plugin en settings -->
 <!-- <plugin name="org.apache.cordova.statusbar" version="0.1.4" /> -->
+<plugin name="cordova-plugin-statusbar" source="npm" />    
 <preference name="StatusBarOverlaysWebView" value="false" />
     
 <preference name="StatusBarBackgroundColor" value="#65bcab" />
