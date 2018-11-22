@@ -52,21 +52,7 @@ permission on your app, which PhoneGap requires.
 <preference name="stay-in-webview" value="false" /> <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
 <preference name="detect-data-types" value="false" /> <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
 <preference name="exit-on-suspend" value="true" /> <!-- ios: if set to true, app will terminate when home button is pressed -->
-<preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
-
-    
-<edit-config target="StatusBarOverlaysWebView" file="*-Info.plist" mode="overwrite" platform="ios">
-<false/>
-</edit-config>
-
-<edit-config target="StatusBarBackgroundColor" file="*-Info.plist" mode="overwrite" platform="ios">
-<string>#1c375f</string>
-</edit-config> 
-
-<edit-config target="StatusBarStyle" file="*-Info.plist" mode="overwrite" platform="ios">
-<string>lightcontent</string>
-</edit-config>
-    
+<preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->    
 
 <preference name="AllowInlineMediaPlayback" value="true" />
 
@@ -78,8 +64,30 @@ permission on your app, which PhoneGap requires.
 <preference name="FadeSplashScreenDuration" value="0.5" />
 
 <!-- statusbar plugin en settings -->
-<!-- <plugin name="org.apache.cordova.statusbar" version="0.1.4" /> -->
-<gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
+<plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+<edit-config target="StatusBarOverlaysWebView" file="*-Info.plist" mode="overwrite" platform="ios">
+<false/>
+</edit-config>
+
+<edit-config target="StatusBarBackgroundColor" file="*-Info.plist" mode="overwrite" platform="ios">
+<string>#1c375f</string>
+</edit-config> 
+
+<edit-config target="StatusBarStyle" file="*-Info.plist" mode="overwrite" platform="ios">
+<string>lightcontent</string>
+</edit-config>
+<edit-config target="StatusBarOverlaysWebView" file="*-Info.plist" mode="overwrite" platform="ios">
+<false/>
+</edit-config>
+
+<edit-config target="StatusBarBackgroundColor" file="*-Info.plist" mode="overwrite" platform="ios">
+<string>#1c375f</string>
+</edit-config> 
+
+<edit-config target="StatusBarStyle" file="*-Info.plist" mode="overwrite" platform="ios">
+<string>lightcontent</string>
+</edit-config>
+
 <preference name="StatusBarOverlaysWebView" value="false" />
     
 <preference name="StatusBarBackgroundColor" value="#65bcab" />
