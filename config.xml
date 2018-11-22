@@ -17,13 +17,13 @@
        Bas van der Wilk
     </author>
 
-	<gap:platform name="ios" />
+	<platform name="ios" />
 <!--	<gap:platform name="android" /> -->
 
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
 
 	
-	<gap:plugin name="cc.fovea.cordova.purchase" source="npm" version="6.0.0" />
+	<plugin name="cc.fovea.cordova.purchase" source="npm" version="6.0.0" />
 	
 
 
@@ -64,30 +64,7 @@ permission on your app, which PhoneGap requires.
 <preference name="FadeSplashScreenDuration" value="0.5" />
 
 <!-- statusbar plugin en settings -->
-<plugin name="cordova-plugin-statusbar" source="npm" spec="2.4.1" />
-<edit-config target="StatusBarOverlaysWebView" file="*-Info.plist" mode="overwrite" platform="ios">
-<false/>
-</edit-config>
-
-<edit-config target="StatusBarBackgroundColor" file="*-Info.plist" mode="overwrite" platform="ios">
-<string>#1c375f</string>
-</edit-config> 
-
-<edit-config target="StatusBarStyle" file="*-Info.plist" mode="overwrite" platform="ios">
-<string>lightcontent</string>
-</edit-config>
-<edit-config target="StatusBarOverlaysWebView" file="*-Info.plist" mode="overwrite" platform="ios">
-<false/>
-</edit-config>
-
-<edit-config target="StatusBarBackgroundColor" file="*-Info.plist" mode="overwrite" platform="ios">
-<string>#1c375f</string>
-</edit-config> 
-
-<edit-config target="StatusBarStyle" file="*-Info.plist" mode="overwrite" platform="ios">
-<string>lightcontent</string>
-</edit-config>
-
+<plugin name="cordova-plugin-statusbar" source="npm" />
 <preference name="StatusBarOverlaysWebView" value="false" />
     
 <preference name="StatusBarBackgroundColor" value="#65bcab" />
