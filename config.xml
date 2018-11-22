@@ -79,7 +79,7 @@ permission on your app, which PhoneGap requires.
 
 <!-- statusbar plugin en settings -->
 <!-- <plugin name="org.apache.cordova.statusbar" version="0.1.4" /> -->
-<plugin name="cordova-plugin-statusbar" source="npm" />    
+<gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
 <preference name="StatusBarOverlaysWebView" value="false" />
     
 <preference name="StatusBarBackgroundColor" value="#65bcab" />
