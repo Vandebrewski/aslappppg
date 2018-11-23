@@ -23,7 +23,7 @@
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
 
 	
-	<plugin name="cc.fovea.cordova.purchase" source="npm" version="6.0.0" />
+	<plugin name="cc.fovea.cordova.purchase" spec="6.0.0" />
 	
 
 
