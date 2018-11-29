@@ -4,20 +4,21 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.basvanderwilk.aslkids"
-        versionCode = "20"
+        versionCode = "10"
         version   = "2.0">
 
-    <name>ASL Kids 1.4</name>
+    <name>ASL Kids</name>
 
-    <description>
-       Baby sign language and Sign Language for kids and beginners 
-    </description>
+<description>
+Sign Language for beginners, Baby sign language 
+</description>
 
     <author href="http://asl-kids.com" email="info@asl-kids.com">
        Bas van der Wilk
     </author>
 
 	<platform name="ios" />
+    <preference name="deployment-target" value="9.0" />
 <!--	<gap:platform name="android" /> -->
 
 <!-- inapppurchase iOS plugin change json in plugin for Android -->
@@ -62,6 +63,8 @@ permission on your app, which PhoneGap requires.
 <preference name="auto-hide-splash-screen" value="false" />
 <preference name="FadeSplashScreen" value="true" />  
 <preference name="FadeSplashScreenDuration" value="0.5" />
+    
+    
 
 <!-- statusbar plugin en settings -->
 <plugin name="cordova-plugin-statusbar" source="npm" />
