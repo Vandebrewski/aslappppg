@@ -4,13 +4,13 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.basvanderwilk.aslkids"
-        versionCode = "20"
+        versionCode = "10"
         version   = "2.0">
 
-    <name>ASL Kids 1.4</name>
+    <name>ASL Kids</name>
 
     <description>
-       Baby sign language and Sign Language for kids and beginners 
+       Sign language for beginners / Baby sign language
     </description>
 
     <author href="http://asl-kids.com" email="info@asl-kids.com">
@@ -18,29 +18,7 @@
     </author>
 
 	<platform name="ios" />
-<!--	<gap:platform name="android" /> -->
-
-<!-- inapppurchase iOS plugin change json in plugin for Android -->
-
-	
 	<plugin name="cc.fovea.cordova.purchase" source="npm" version="6.0.0" />
-	
-
-
-<!-- added this for Android, not sure it needs it 
-<feature name="http://api.phonegap.com/1.0/media"/>
-<gap:plugin name="com.moust.cordova.videoplayer" version="1.0.0" /> -->
-
-
-<!-- <application android:hardwareAccelerated="true"> -->
- 
-<!--
-If you do not want any permissions to be added to your app, add the
-following tag to your config.xml; you will still have the INTERNET
-permission on your app, which PhoneGap requires.
--->
-<!-- <preference name="permissions" value="none"/> -->
-
 <!-- Customize your app and platform with the preference element. -->
 <preference name='phonegap-version' value='cli-6.5.0' />
 
@@ -99,16 +77,16 @@ permission on your app, which PhoneGap requires.
     
     
     <!-- iPad -->
-    <gap:splash src="resources/splash/ipad-portrait.png" gap:platform="ios" width="768" height="1024"/> <!--  iPad  -->
+    <splash src="resources/splash/ipad-portrait.png" gap:platform="ios" width="768" height="1024"/> <!--  iPad  -->
 	<!-- iPhone and iPod touch -->
-    <gap:splash src="resources/splash/320x480.png" gap:platform="ios" width="320" height="480"/> <!--   -->
-    <gap:splash src="resources/splash/640x960.png" gap:platform="ios" width="640" height="960"/> <!--   -->
-    <gap:splash src="resources/splash/1536x2048.png" gap:platform="ios" width="1536" height="2048"/> <!--   -->
+    <splash src="resources/splash/320x480.png" gap:platform="ios" width="320" height="480"/> <!--   -->
+    <splash src="resources/splash/640x960.png" gap:platform="ios" width="640" height="960"/> <!--   -->
+    <splash src="resources/splash/1536x2048.png" gap:platform="ios" width="1536" height="2048"/> <!--   -->
 	<!-- iPhone 5 / iPod Touch (5th Generation) -->
-    <gap:splash src="resources/splash/640x1136.png" gap:platform="ios" width="640" height="1136"/> <!--   -->
+    <splash src="resources/splash/640x1136.png" gap:platform="ios" width="640" height="1136"/> <!--   -->
 	<!-- iPhone 6 -->
-    <gap:splash src="resources/splash/750x1334.png" gap:platform="ios" width="750" height="1334"/> <!-- iPhone 6 plus  -->
-    <gap:splash src="resources/splash/1242x2208.png" gap:platform="ios" width="1242" height="2208"/> <!-- iPhone 6 plus  -->
+    <splash src="resources/splash/750x1334.png" gap:platform="ios" width="750" height="1334"/> <!-- iPhone 6 plus  -->
+    <splash src="resources/splash/1242x2208.png" gap:platform="ios" width="1242" height="2208"/> <!-- iPhone 6 plus  -->
 
 
     <access origin="*"/> <!-- allow local pages -->
