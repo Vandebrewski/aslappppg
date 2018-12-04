@@ -7,7 +7,7 @@
         versionCode = "10"
         version   = "2.0">
 
-    <name>ASL Kids 1.5</name>
+    <name>ASL Kids 1.6</name>
 
     <description>
     Sign Language for beginners and Baby sign language. 
@@ -36,7 +36,8 @@
 
 
 <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
-<plugin name="org.apache.cordova.splashscreen" />
+
+<plugin name="cordova-plugin-splashscreen" source="npm" />
 <preference name="auto-hide-splash-screen" value="false" />
 <preference name="FadeSplashScreen" value="true" />  
 <preference name="FadeSplashScreenDuration" value="0.5" />
