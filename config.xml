@@ -50,48 +50,57 @@
     
 <preference name="StatusBarBackgroundColor" value="#65bcab" />
 <preference name="StatusBarStyle" value="lightcontent" />
-
-	<!-- iOS7+ -->
-	<!-- iPhone 6 / 6+ -->
-	<icon src="resources/icons/icons-180.png" gap:platform="ios" width="180" height="180" />
-
-	<!-- iPhone / iPod Touch  -->
-	<icon src="resources/icons/icons-60.png" gap:platform="ios" width="60" height="60" />
-	<icon src="resources/icons/icons-120.png" gap:platform="ios" width="120" height="120" />
-
-	<!-- iPad -->
-    <icon src="resources/icons/icons-76.png"       gap:platform="ios"	width="76" height="76" />
-    <icon src="resources/icons/icons-152.png"      gap:platform="ios"	width="152" height="152" /> 
-
-	<!-- Settings Icon -->
-	<icon src="resources/icons/icons-29.png"       gap:platform="ios"	width="29" height="29" />
-	<icon src="resources/icons/icons-58.png" gap:platform="ios" width="58" height="58" />
-
-	<!-- Spotlight Icon -->
-    <icon src="resources/icons/icons-40.png"       gap:platform="ios"	width="40" height="40" />
-    <icon src="resources/icons/icons-80.png"       gap:platform="ios"	width="80" height="80" />
-
-	<!-- iOS 6.1 -->
-	<!-- iPhone / iPod Touch-->
-    <icon src="resources/icons/icon.png"			gap:platform="ios"	width="57" height="57" />
-    <!-- iPad -->
-    <icon src="resources/icons/icons-72.png"       gap:platform="ios"	width="72" height="72" />
-
     
     
-    <!-- iPad -->
-    <splash src="resources/splash/ipad-portrait.png" gap:platform="ios" width="768" height="1024"/> <!--  iPad  -->
-	<!-- iPhone and iPod touch -->
-    <splash src="resources/splash/320x480.png" gap:platform="ios" width="320" height="480"/> <!--   -->
-    <splash src="resources/splash/640x960.png" gap:platform="ios" width="640" height="960"/> <!--   -->
-    <splash src="resources/splash/1536x2048.png" gap:platform="ios" width="1536" height="2048"/> <!--   -->
-	<!-- iPhone 5 / iPod Touch (5th Generation) -->
-    <splash src="resources/splash/640x1136.png" gap:platform="ios" width="640" height="1136"/> <!--   -->
-	<!-- iPhone 6 -->
-    <splash src="resources/splash/750x1334.png" gap:platform="ios" width="750" height="1334"/> <!-- iPhone 6 plus  -->
-    <splash src="resources/splash/1242x2208.png" gap:platform="ios" width="1242" height="2208"/> <!-- iPhone 6 plus  -->
-
-
+<platform name="android">
+	<icon qualifier="ldpi" src="res/icons/android/drawable-ldpi-icon.png" />
+	<icon qualifier="mdpi" src="res/icons/android/drawable-mdpi-icon.png" />
+	<icon qualifier="hdpi" src="res/icons/android/drawable-hdpi-icon.png" />
+	<icon qualifier="xhdpi" src="res/icons/android/drawable-xhdpi-icon.png" />
+	<icon qualifier="xxhdpi" src="res/icons/android/drawable-xxhdpi-icon.png" />
+	<icon qualifier="xxxhdpi" src="res/icons/android/drawable-xxxhdpi-icon.png" />
+	<splash qualifier="land-ldpi" src="res/screens/android/drawable-land-ldpi-screen.png" />
+	<splash qualifier="land-mdpi" src="res/screens/android/drawable-land-mdpi-screen.png" />
+	<splash qualifier="land-hdpi" src="res/screens/android/drawable-land-hdpi-screen.png" />
+	<splash qualifier="land-xhdpi" src="res/screens/android/drawable-land-xhdpi-screen.png" />
+	<splash qualifier="land-xxhdpi" src="res/screens/android/drawable-land-xxhdpi-screen.png" />
+	<splash qualifier="land-xxxhdpi" src="res/screens/android/drawable-land-xxxhdpi-screen.png" />
+	<splash qualifier="port-ldpi" src="res/screens/android/drawable-port-ldpi-screen.png" />
+	<splash qualifier="port-mdpi" src="res/screens/android/drawable-port-mdpi-screen.png" />
+	<splash qualifier="port-hdpi" src="res/screens/android/drawable-port-hdpi-screen.png" />
+	<splash qualifier="port-xhdpi" src="res/screens/android/drawable-port-xhdpi-screen.png" />
+	<splash qualifier="port-xxhdpi" src="res/screens/android/drawable-port-xxhdpi-screen.png" />
+	<splash qualifier="port-xxxhdpi" src="res/screens/android/drawable-port-xxxhdpi-screen.png" />
+</platform>
+<platform name="ios">
+	<icon height="57" platform="ios" src="resources/icons/icon.png" width="57" />
+	<icon height="114" platform="ios" src="resources/icons/icon@2x.png" width="114" />
+	<icon height="40" platform="ios" src="resources/icons/icon-40.png" width="40" />
+	<icon height="80" platform="ios" src="resources/icons/icon-40@2x.png" width="80" />
+	<icon height="50" platform="ios" src="resources/icons/icon-50.png" width="50" />
+	<icon height="100" platform="ios" src="resources/icons/icon-50@2x.png" width="100" />
+	<icon height="60" platform="ios" src="resources/icons/icon-60.png" width="60" />
+	<icon height="120" platform="ios" src="resources/icons/icon-60@2x.png" width="120" />
+	<icon height="180" platform="ios" src="resources/icons/icon-60@3x.png" width="180" />
+	<icon height="72" platform="ios" src="resources/icons/icon-72.png" width="72" />
+	<icon height="144" platform="ios" src="resources/icons/icon-72@2x.png" width="144" />
+	<icon height="76" platform="ios" src="resources/icons/icon-76.png" width="76" />
+	<icon height="152" platform="ios" src="resources/icons/icon-76@2x.png" width="152" />
+	<icon height="29" platform="ios" src="resources/icons/icon-small.png" width="29" />
+	<icon height="58" platform="ios" src="resources/icons/icon-small@2x.png" width="58" />
+	<icon height="87" platform="ios" src="resources/icons/icon-small@3x.png" width="87" />
+	<splash height="1136" platform="ios" src="resources/icons/Default-568h@2x~iphone.png" width="640" />
+	<splash height="1334" platform="ios" src="resources/icons/Default-667h.png" width="750" />
+	<splash height="2208" platform="ios" src="resources/icons/Default-736h.png" width="1242" />
+	<splash height="1242" platform="ios" src="resources/icons/Default-Landscape-736h.png" width="2208" />
+	<splash height="1536" platform="ios" src="resources/icons/Default-Landscape@2x~ipad.png" width="2048" />
+	<splash height="768" platform="ios" src="resources/icons/Default-Landscape~ipad.png" width="1024" />
+	<splash height="2048" platform="ios" src="resources/icons/Default-Portrait@2x~ipad.png" width="1536" />
+	<splash height="1024" platform="ios" src="resources/icons/Default-Portrait~ipad.png" width="768" />
+	<splash height="960" platform="ios" src="resources/icons/Default@2x~iphone.png" width="640" />
+	<splash height="480" platform="ios" src="resources/icons/Default~iphone.png" width="320" />
+</platform>    
+    
     <access origin="*"/> <!-- allow local pages -->
 
 </widget>
