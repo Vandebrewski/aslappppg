@@ -36,11 +36,11 @@
 
 
 <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
-<!-- <plugin name="org.apache.cordova.splashscreen" /> -->
+<plugin name="org.apache.cordova.splashscreen" />
 <preference name="auto-hide-splash-screen" value="false" />
 <preference name="FadeSplashScreen" value="true" />  
 <preference name="FadeSplashScreenDuration" value="0.5" />
-<!-- <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF"/> -->
+<preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF"/>
     
 
 <!-- statusbar plugin en settings -->
