@@ -1,7 +1,8 @@
 {"Gebaartje": [
-  {"Id":1, "cat":"Animals","plaatje":"catdieren"},
-  {"Id":2,  "cat":"Baby sign language","plaatje":"catikenomgeving"},
-  {"Id":3, "cat":"fingerspelling & Numbers","plaatje":"catleuk"},
-  {"Id":4,  "cat":"Sign language for beginners","plaatje":"catseizoenen"},
-  {"Id":5, "cat":"Emotions & Colors","plaatje":"catemoties"}
+  {"Id":1, "cat":"Animals","plaatje":"catanimals"},
+  {"Id":2,  "cat":"Basics","plaatje":"catbasics"},
+  {"Id":3, "cat":"Emotions & Colors","plaatje":"catemotions"},
+  {"Id":4,  "cat":"Family & Food","plaatje":"catfamily"},
+  {"Id":5, "cat":"Nature","plaatje":"catnature"},
+    {"Id":6, "cat":"Play time","plaatje":"catplaytime"}
 ]}
