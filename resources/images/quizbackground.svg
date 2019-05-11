@@ -17,12 +17,4 @@
 		393.291,700.454 503.727,980.915 547.37,980.365 402.864,698.432 583.194,979.909 632.433,979.287 411.898,695.335 674.874,978.75 
 		733.855,978.004 420.177,691.245 	"/>
 </g>
-<g id="top">
-	
-		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="466.6445" y1="1142.4082" x2="466.6445" y2="879.8711" gradientTransform="matrix(0.4431 0 0 -0.4431 177.4153 502.426)">
-		<stop  offset="0" style="stop-color:#1E8FD9"/>
-		<stop  offset="1" style="stop-color:#1E8FD9;stop-opacity:0"/>
-	</linearGradient>
-	<rect y="-3.749" opacity="0.7" fill="url(#SVGID_2_)" enable-background="new    " width="768.351" height="116.324"/>
-</g>
 </svg>
