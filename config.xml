@@ -48,8 +48,7 @@
 
 <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
 <preference name="StatusBarOverlaysWebView" value="true" />    
-<!-- <preference name="StatusBarBackgroundColor" value="#65bcab" /> -->
-<preference name="StatusBar.backgroundColorByHexString("#65bcab");" />
+<preference name="StatusBarBackgroundColor" value="green" /> 
 
 
 <preference name="StatusBarStyle" value="lightcontent" />
