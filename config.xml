@@ -44,12 +44,14 @@
 <preference name="SplashScreenBackgroundColor" value="0xFF65BCAB"/>
     
 
-<!-- statusbar plugin en settings -->
+<!-- statusbar plugin en settings 
+
 <plugin name="cordova-plugin-statusbar" source="npm" />
-<preference name="StatusBarOverlaysWebView" value="false" />
-    
+<preference name="StatusBarOverlaysWebView" value="false" />    
 <preference name="StatusBarBackgroundColor" value="#65bcab" />
 <preference name="StatusBarStyle" value="lightcontent" />
+-->    
+    
     
 <!--     
 <platform name="android">
