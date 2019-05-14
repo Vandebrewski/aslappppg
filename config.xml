@@ -103,7 +103,7 @@
 	<icon height="76" platform="ios" src="resources/icons/icons-76.png" width="76" />
 <!--	<icon height="152" platform="ios" src="resources/icons/icon-76@2x.png" width="152" /> -->
 <!-->	<icon height="29" platform="ios" src="resources/icons/icon-small.png" width="29" /> -->
-	<icon height="58" platform="ios" src="resources/icons/icons-small@2x.png" width="58" />
+	<icon height="58" platform="ios" src="resources/icons/icon-small@2x.png" width="58" />
 <!--	<icon height="87" platform="ios" src="resources/icons/icon-small@3x.png" width="87" /> -->
 	<splash height="1136" platform="ios" src="resources/icons/Default-568h@2x~iphone.png" width="640" />
 	<splash height="1334" platform="ios" src="resources/icons/Default-667h.png" width="750" />
