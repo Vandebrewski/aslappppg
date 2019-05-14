@@ -46,7 +46,7 @@
 
 <!-- statusbar plugin en settings  -->
 
-<plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
+<plugin name="cordova-plugin-statusbar" source="npm" />
 <preference name="StatusBarOverlaysWebView" value="true" />    
 <preference name="StatusBarBackgroundColor" value="green" /> 
 
