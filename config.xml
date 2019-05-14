@@ -20,7 +20,7 @@
 	<platform name="ios" />
 	<plugin name="cc.fovea.cordova.purchase" source="npm" version="6.0.0" />
 
-<preference name='phonegap-version' value='cli-8.0.0' />
+<preference name='phonegap-version' value='cli-7.1.0' />
 
 <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device" value="universal" /> <!-- all: possible values handset, tablet, or universal -->
