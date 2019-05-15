@@ -106,7 +106,13 @@
 	<icon height="76" platform="ios" src="resources/icons/Icon-76.png" width="76" />
 	<icon height="76" platform="ios" src="resources/icons/Icon-76@2x.png" width="76" />
 	<icon height="83.5" platform="ios" src="resources/icons/Icon-83_5@2x.png" width="83.5" />
-	<icon height="1024" platform="ios" src="resources/icons/ios-marketing.png" width="1024" />
+	<icon height="1024" platform="ios" src="resources/icons/ios-marketing.png" width="1024" />	
+	<icon height="1024" platform="ios" src="resources/icons/Icon-App-1024x1024.png" width="1024" />
+	<icon height="120" platform="ios" src="resources/icons/Icon-App-60x60@2x.png" width="120" />
+	<icon height="167" platform="ios" src="resources/icons/Icon-App-83.5x83.5@2x.png" width="167" />
+	<icon height="152" platform="ios" src="resources/icons/Icon-App-76x76@2x.png" width="152" />
+	
+	
 </platform>    
     
     <access origin="*"/> <!-- allow local pages -->
