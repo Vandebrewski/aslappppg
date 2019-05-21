@@ -42,11 +42,6 @@
 
 <preference name="UIWebViewDecelerationSpeed" value="fast" />
 
-<preference name="OverrideUserAgent" value="Mozilla/5.0 My Browser" />
-<preference name="AppendUserAgent" value="My Browser" />
-<preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
-<preference name="CordovaDefaultWebViewEngine" value="CDVUIWebViewEngine" />
-
 
 
 
