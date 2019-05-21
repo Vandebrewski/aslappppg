@@ -222,8 +222,6 @@
 {"Id": 250 , "plaatje":"sandbox", "cat":"Play time"},
 {"Id": 251 , "plaatje":"scissors", "cat":"Play time"},
 {"Id": 252 , "plaatje":"shovel", "cat":"Play time"},
-{"Id": 254 , "plaatje":"soccer", "cat":"Play time"},
-{"Id": 255 , "plaatje":"swimming pool", "cat":"Play time"},
 {"Id": 256 , "plaatje":"swing", "cat":"Play time"}
 ]}
 
