@@ -33,7 +33,7 @@
 <preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->    
 
 <preference name="AllowInlineMediaPlayback" value="true" />
-<preference name="MediaPlaybackRequiresUserAction" value="false" />
+<preference name="MediaPlaybackRequiresUserAction" value="true" />
 
 
 <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
