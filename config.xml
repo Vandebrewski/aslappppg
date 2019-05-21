@@ -33,17 +33,11 @@
 <preference name="show-splash-screen-spinner" value="true" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->    
 
 <preference name="AllowInlineMediaPlayback" value="true" />
-<preference name="MediaPlaybackRequiresUserAction" value="true"/>
+<preference name="MediaPlaybackRequiresUserAction" value="false"/>
 
-
+<preference name="TopActivityIndicator" value="white"/>
 
 <!-- iOS only preferences -->
-<preference name="EnableViewportScale" value="true"/>
-<preference name="MediaPlaybackAllowsAirPlay" value="false"/>
-<preference name="BackupWebStorage" value="local"/>
-
-<preference name="SuppressesIncrementalRendering" value="true"/>
-
 
 
 <preference name="UIWebViewDecelerationSpeed" value="fast" />
@@ -52,8 +46,7 @@
 <preference name="AppendUserAgent" value="My Browser" />
 <preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
 <preference name="CordovaDefaultWebViewEngine" value="CDVUIWebViewEngine" />
-<preference name="SuppressesLongPressGesture" value="true" />
-<preference name="Suppresses3DTouchGesture" value="true" />
+
 
 
 
